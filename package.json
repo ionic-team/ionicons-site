@@ -1,0 +1,37 @@
+{
+  "name": "ionicons-site",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/ionicons-site/ionicons-site.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build && build.zip",
+    "build.zip": "node scripts/build-zip.js",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "devDependencies": {
+    "@stencil/core": "^1.0.7",
+    "@stencil/sass": "^1.0.0",
+    "archiver": "^3.0.0",
+    "fs-extra": "^8.0.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@stencil/router": "^1.0.1",
+    "@types/highlight.js": "^9.12.3",
+    "highlight.js": "^9.15.8",
+    "ionicons": "4.5.10-1"
+  }
+}
