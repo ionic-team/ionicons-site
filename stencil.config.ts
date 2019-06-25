@@ -12,6 +12,7 @@ export const config: Config = {
       dir: 'docs',
       serviceWorker: null,
       baseUrl: 'https://ionicons.com/',
+      prerenderConfig: 'prerender.config.js',
       copy: [
         { src: '../node_modules/ionicons/dist/css/ionicons.min.css', dest: './css/ionicons.min.css' },
         { src: '../node_modules/ionicons/dist/ionicons/', dest: './ionicons/' },
