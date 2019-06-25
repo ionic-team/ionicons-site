@@ -41,7 +41,7 @@ export class IoniconsSite {
   }
 
   componentWillLoad() {
-    this.loadData();
+    return this.loadData();
   }
 
   async loadData() {

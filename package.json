@@ -15,14 +15,14 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build && build.zip",
+    "build": "stencil build --prerender && npm run build.zip",
     "build.zip": "node scripts/build-zip.js",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@stencil/core": "^1.0.7",
+    "@stencil/core": "^1.1.1",
     "@stencil/sass": "^1.0.0",
     "archiver": "^3.0.0",
     "fs-extra": "^8.0.1"

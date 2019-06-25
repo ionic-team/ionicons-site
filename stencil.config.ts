@@ -9,7 +9,9 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
+      dir: 'docs',
       serviceWorker: null,
+      baseUrl: 'https://ionicons.com/',
       copy: [
         { src: '../node_modules/ionicons/dist/css/ionicons.min.css', dest: './css/ionicons.min.css' },
         { src: '../node_modules/ionicons/dist/ionicons/', dest: './ionicons/' },
