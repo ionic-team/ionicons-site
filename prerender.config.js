@@ -3,7 +3,14 @@
 module.exports = {
 
   filterUrl(url) {
-    if (url.pathname.startsWith('/cheatsheet.html')) {
+    const pathname = url.pathname;
+    if (pathname.startsWith('/cheatsheet.html')) {
+      return false;
+    }
+    if (pathname.startsWith('/v1')) {
+      return false;
+    }
+    if (pathname.startsWith('/v2')) {
       return false;
     }
     return true;
