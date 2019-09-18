@@ -23,6 +23,7 @@ export const config: Config = {
 
         { src: '../archived/v1/', dest: './v1/' },
         { src: '../archived/v2/', dest: './v2/' },
+        { src: '../archived/v4/', dest: './v4/' },
         { src: './index.html', dest: './usage/index.html' },
         { src: './test', dest: './test' },
       ]
