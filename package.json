@@ -24,6 +24,7 @@
   "devDependencies": {
     "@stencil/core": "^1.1.1",
     "@stencil/sass": "^1.0.0",
+    "@types/prismic-dom": "^2.1.0",
     "archiver": "^3.0.0",
     "fs-extra": "^8.0.1"
   },
@@ -32,6 +33,8 @@
     "@stencil/router": "^1.0.1",
     "@types/highlight.js": "^9.12.3",
     "highlight.js": "^9.15.8",
-    "ionicons": "4.5.10-1"
+    "ionicons": "4.5.10-1",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^2.1.1"
   }
 }

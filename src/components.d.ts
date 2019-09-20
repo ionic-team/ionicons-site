@@ -11,6 +11,7 @@ import {
 } from '@stencil/router';
 
 export namespace Components {
+  interface AnnouncementBar {}
   interface FooterBar {}
   interface HeaderBar {
     'isSearchVisible': boolean;
@@ -48,6 +49,12 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLAnnouncementBarElement extends Components.AnnouncementBar, HTMLStencilElement {}
+  var HTMLAnnouncementBarElement: {
+    prototype: HTMLAnnouncementBarElement;
+    new (): HTMLAnnouncementBarElement;
+  };
 
   interface HTMLFooterBarElement extends Components.FooterBar, HTMLStencilElement {}
   var HTMLFooterBarElement: {
@@ -103,6 +110,7 @@ declare global {
     new (): HTMLUsagePageElement;
   };
   interface HTMLElementTagNameMap {
+    'announcement-bar': HTMLAnnouncementBarElement;
     'footer-bar': HTMLFooterBarElement;
     'header-bar': HTMLHeaderBarElement;
     'icon-list': HTMLIconListElement;
@@ -116,6 +124,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface AnnouncementBar extends JSXBase.HTMLAttributes<HTMLAnnouncementBarElement> {}
   interface FooterBar extends JSXBase.HTMLAttributes<HTMLFooterBarElement> {}
   interface HeaderBar extends JSXBase.HTMLAttributes<HTMLHeaderBarElement> {
     'isSearchVisible'?: boolean;
@@ -155,6 +164,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'announcement-bar': AnnouncementBar;
     'footer-bar': FooterBar;
     'header-bar': HeaderBar;
     'icon-list': IconList;

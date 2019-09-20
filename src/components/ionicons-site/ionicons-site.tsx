@@ -81,6 +81,7 @@ export class IoniconsSite {
 
   render() {
     return [
+      // <announcement-bar></announcement-bar>,
       <header-bar
         version={this.data.version}
         query={this.query}
