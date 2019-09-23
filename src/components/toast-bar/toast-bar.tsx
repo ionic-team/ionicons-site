@@ -13,6 +13,7 @@ export class ToastBar {
     tags: string[]
   };
   @Prop() selectedIconType?: string;
+  @Prop() typeSuffix?: string;
 
   @State() showCopiedConfirm?: number;
   @State() hadIconOnce = false;
@@ -77,7 +78,7 @@ export class ToastBar {
     if (this.selectedIcon) {
       if (!this.hadIconOnce) this.hadIconOnce = true;
 
-      iconAttrName = this.selectedIcon.name;
+      iconAttrName = this.selectedIcon.name + this.typeSuffix;
       iconType = this.selectedIcon.icons[0].startsWith('logo-') ? 'logo' : this.selectedIconType;
 
       if (iconType === 'logo') iconAttrName = 'logo-' + iconAttrName;
@@ -86,18 +87,19 @@ export class ToastBar {
 
       activeDownloadLinks = this.selectedIcon.icons.map((name) => {
         const type = name.substr(0, name.indexOf('-'));
+        console.log(name)
+
         let heading;
-        switch (type) {
-          case 'ios':
-            heading = 'iOS STYLE';
-            break;
-          case 'md':
-            heading = 'MATERIAL STYLE';
-            break;
-          case 'logo':
-            heading = 'LOGO';
-            break;
+        if (name.includes('-outline')) {
+          heading = 'OUTLINE';
+        } else if (name.includes('-sharp')) {
+          heading = 'SHARP';
+        } else if (name.includes('logo-')) {
+          heading = 'LOGO';
+        } else {
+          heading = 'DEFAULT';
         }
+
         return (
           <div class="toast-bar__section">
             <div class="toast-bar__section-header">
@@ -105,10 +107,14 @@ export class ToastBar {
             </div>
             <div class="btn-group">
               <div class="btn btn--gray btn--small btn--icon">
-                <i class={'ion ion-' + name}></i>
+                <svg>
+                  <use xlinkHref={`#${name}`}/>
+                </svg>
               </div>
               <a class="btn btn--gray btn--small" download={`/ionicons/svg/${name}.svg`} href={`/ionicons/svg/${name}.svg`}>
-                <i class="ion ion-md-download"></i>
+                <svg>
+                  <use xlinkHref={`#download`}/>
+                </svg>
                 SVG
               </a>
             </div>

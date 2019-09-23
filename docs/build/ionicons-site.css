@@ -232,8 +232,9 @@ p.lead {
   letter-spacing: 0.05em;
 }
 
-.btn--small .ion {
-  font-size: 14px;
+.btn--small svg {
+  width: 14px;
+  height: 14px;
   margin-right: 4px;
 }
 
@@ -247,8 +248,9 @@ p.lead {
   color: #fff;
 }
 
-.btn--icon .ion {
-  font-size: 26px;
+.btn--icon svg {
+  width: 26px;
+  height: 26px;
   margin: 0;
 }
 

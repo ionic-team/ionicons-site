@@ -50,11 +50,38 @@ export class IoniconsSite {
 
     this.data = json;
 
-    this.data.icons = json.icons.map((o: any) => {
-      o.icons = o.icons.reverse();
-      o.name = o.icons[0].split('-').slice(1).join('-');
-      return o;
+    let dat = [];
+    json.icons.forEach((icon) => {
+      if (!icon.name.includes('-outline') && !icon.name.includes('-sharp') && !dat.find((o) => o.name === icon.name)) {
+        dat.push({
+          name: icon.name,
+          icons: [icon.name],
+          tags: icon.tags
+        });
+      }
     });
+
+    insertVariants('-outline');
+    insertVariants('-sharp');
+    function insertVariants(variantSuffix) {
+      json.icons.forEach((icon) => {
+        if (icon.name.includes('logo-')) return;
+        if (icon.name.includes(variantSuffix)) {
+          const baseName = icon.name.replace(variantSuffix, '');
+          const datIndex = dat.findIndex((icon => icon.name === baseName));
+          if (datIndex < 0) return;
+          dat[datIndex].icons.push(icon.name)
+        }
+      });
+    }
+
+    this.data.icons = dat;
+
+    // this.data.icons = dat.map((o: any) => {
+    //   o.icons = o.icons.reverse();
+    //   o.name = o.icons[0].split('-').slice(1).join('-');
+    //   return o;
+    // });
   }
 
   checkScroll() {

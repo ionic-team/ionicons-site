@@ -39,6 +39,7 @@ export namespace Components {
       tags: string[]
     };
     'selectedIconType'?: string;
+    'typeSuffix'?: string;
   }
   interface UsagePage {
     'data': any;
@@ -148,6 +149,7 @@ declare namespace LocalJSX {
       tags: string[]
     };
     'selectedIconType'?: string;
+    'typeSuffix'?: string;
   }
   interface UsagePage extends JSXBase.HTMLAttributes<HTMLUsagePageElement> {
     'data'?: any;
