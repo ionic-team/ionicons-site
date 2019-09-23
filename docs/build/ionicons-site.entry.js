@@ -23,7 +23,7 @@ const IoniconsSite = class {
         return this.loadData();
     }
     async loadData() {
-        const res = await fetch('/data.json');
+        const res = await fetch('/ionicons.json');
         const json = await res.json();
         this.data = json;
         this.data.icons = json.icons.map((o) => {

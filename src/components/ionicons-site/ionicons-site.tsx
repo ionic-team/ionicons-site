@@ -45,10 +45,11 @@ export class IoniconsSite {
   }
 
   async loadData() {
-    const res = await fetch('/data.json');
+    const res = await fetch('/ionicons.json');
     const json = await res.json();
 
     this.data = json;
+
     this.data.icons = json.icons.map((o: any) => {
       o.icons = o.icons.reverse();
       o.name = o.icons[0].split('-').slice(1).join('-');

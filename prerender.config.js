@@ -13,6 +13,9 @@ module.exports = {
     if (pathname.startsWith('/v2')) {
       return false;
     }
+    if (pathname.startsWith('/v4')) {
+      return false;
+    }
     return true;
   }
 
