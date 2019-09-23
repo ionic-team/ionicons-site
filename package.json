@@ -32,6 +32,6 @@
     "@stencil/router": "^1.0.1",
     "@types/highlight.js": "^9.12.3",
     "highlight.js": "^9.15.8",
-    "ionicons": "4.5.10-1"
+    "ionicons": "5.0.0-0"
   }
 }
