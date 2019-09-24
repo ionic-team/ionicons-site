@@ -108,6 +108,9 @@ header-bar {
     svg {
       margin-left: 6px;
     }
+    svg #arrow {
+      transition: 0.2s transform;
+    }
     &:hover svg #arrow {
       transform: translate(1px, -1px);
     }

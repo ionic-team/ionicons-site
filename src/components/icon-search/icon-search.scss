@@ -23,7 +23,6 @@ icon-search {
     top: 50%;
     transform: translateY(-50%);
     right: 16px;
-    font-size: 14px;
     width: 22px;
     height: 22px;
     display: flex;
@@ -34,6 +33,11 @@ icon-search {
     opacity: 0;
     background-color: var(--color-catskill-white);
     border-radius: 100px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
 
     &--active {
       opacity: 0.8;
@@ -46,25 +50,36 @@ icon-search {
   }
 
   .search-input--small .search-input__clear {
-    font-size: 12px;
     width: 18px;
     height: 18px;
     background-color: #e3e9f3;
     right: 12px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
 
     &--active:hover {
       background-color: darken(#e3e9f3, 2%);
     }
   }
 
-  .search-input:before {
-    font-family: "Ionicons";
-    content: "\f4a5";
+  .search-input__icon svg {
     color: var(--color-heather);
     position: absolute;
-    height: 24px;
+    height: 20px;
+    width: 20px;
     top: 50%;
     transform: translateY(-50%);
+    left: 16px;
+  }
+
+
+  .search-input--small .search-input__icon svg {
+    width: 16px;
+    height: 16px;
+    left: 8px;
   }
 
   .search-input--small input {
@@ -78,10 +93,6 @@ icon-search {
     text-indent: 0;
   }
 
-  .search-input--small:before {
-    font-size: 18px;
-    left: 10px;
-  }
 
   .search-input--large input {
     transition: box-shadow 0.3s;

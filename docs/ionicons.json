@@ -1,6 +1,6 @@
 {
   "name": "ionicons",
-  "version": "5.0.0-1",
+  "version": "5.0.0-3",
   "icons": [
     {
       "name": "add",
@@ -42,6 +42,13 @@
         "invite",
         "plus",
         "sharp"
+      ]
+    },
+    {
+      "name": "add-outline",
+      "tags": [
+        "add",
+        "outline"
       ]
     },
     {
@@ -180,6 +187,13 @@
         "notice",
         "sharp",
         "warning"
+      ]
+    },
+    {
+      "name": "alert-outline",
+      "tags": [
+        "alert",
+        "outline"
       ]
     },
     {
@@ -369,6 +383,14 @@
       ]
     },
     {
+      "name": "arrow-back-outline",
+      "tags": [
+        "arrow",
+        "back",
+        "outline"
+      ]
+    },
+    {
       "name": "arrow-back-sharp",
       "tags": [
         "arrow",
@@ -413,6 +435,14 @@
         "circle",
         "down",
         "sharp"
+      ]
+    },
+    {
+      "name": "arrow-down-outline",
+      "tags": [
+        "arrow",
+        "down",
+        "outline"
       ]
     },
     {
@@ -463,6 +493,14 @@
         "forward",
         "navigation",
         "sharp"
+      ]
+    },
+    {
+      "name": "arrow-forward-outline",
+      "tags": [
+        "arrow",
+        "forward",
+        "outline"
       ]
     },
     {
@@ -611,6 +649,14 @@
       ]
     },
     {
+      "name": "arrow-up-outline",
+      "tags": [
+        "arrow",
+        "outline",
+        "up"
+      ]
+    },
+    {
       "name": "arrow-up-sharp",
       "tags": [
         "arrow",
@@ -653,6 +699,13 @@
       ]
     },
     {
+      "name": "at-outline",
+      "tags": [
+        "at",
+        "outline"
+      ]
+    },
+    {
       "name": "at-sharp",
       "tags": [
         "@",
@@ -664,6 +717,13 @@
       "name": "attach",
       "tags": [
         "attach"
+      ]
+    },
+    {
+      "name": "attach-outline",
+      "tags": [
+        "attach",
+        "outline"
       ]
     },
     {
@@ -836,10 +896,25 @@
       ]
     },
     {
+      "name": "basketball-sharp",
+      "tags": [
+        "basketball",
+        "sharp"
+      ]
+    },
+    {
       "name": "battery-charging",
       "tags": [
         "battery",
         "charging"
+      ]
+    },
+    {
+      "name": "battery-charging-outline",
+      "tags": [
+        "battery",
+        "charging",
+        "outline"
       ]
     },
     {
@@ -858,6 +933,14 @@
       ]
     },
     {
+      "name": "battery-dead-outline",
+      "tags": [
+        "battery",
+        "dead",
+        "outline"
+      ]
+    },
+    {
       "name": "battery-dead-sharp",
       "tags": [
         "battery",
@@ -873,6 +956,14 @@
       ]
     },
     {
+      "name": "battery-full-outline",
+      "tags": [
+        "battery",
+        "full",
+        "outline"
+      ]
+    },
+    {
       "name": "battery-full-sharp",
       "tags": [
         "battery",
@@ -885,6 +976,14 @@
       "tags": [
         "battery",
         "half"
+      ]
+    },
+    {
+      "name": "battery-half-outline",
+      "tags": [
+        "battery",
+        "half",
+        "outline"
       ]
     },
     {
@@ -1621,6 +1720,14 @@
       ]
     },
     {
+      "name": "caret-back-outline",
+      "tags": [
+        "back",
+        "caret",
+        "outline"
+      ]
+    },
+    {
       "name": "caret-back-sharp",
       "tags": [
         "back",
@@ -1659,6 +1766,14 @@
         "circle",
         "down",
         "sharp"
+      ]
+    },
+    {
+      "name": "caret-down-outline",
+      "tags": [
+        "caret",
+        "down",
+        "outline"
       ]
     },
     {
@@ -1703,6 +1818,14 @@
       ]
     },
     {
+      "name": "caret-forward-outline",
+      "tags": [
+        "caret",
+        "forward",
+        "outline"
+      ]
+    },
+    {
       "name": "caret-forward-sharp",
       "tags": [
         "caret",
@@ -1740,6 +1863,14 @@
         "caret",
         "circle",
         "sharp",
+        "up"
+      ]
+    },
+    {
+      "name": "caret-up-outline",
+      "tags": [
+        "caret",
+        "outline",
         "up"
       ]
     },
@@ -1889,19 +2020,19 @@
       ]
     },
     {
-      "name": "chatbubble-ellipses-filled",
-      "tags": [
-        "chatbubble",
-        "ellipses",
-        "filled"
-      ]
-    },
-    {
       "name": "chatbubble-ellipses-outline",
       "tags": [
         "chatbubble",
         "ellipses",
         "outline"
+      ]
+    },
+    {
+      "name": "chatbubble-ellipses-sharp",
+      "tags": [
+        "chatbubble",
+        "ellipses",
+        "sharp"
       ]
     },
     {
@@ -2025,11 +2156,26 @@
       ]
     },
     {
+      "name": "checkmark-done-outline",
+      "tags": [
+        "checkmark",
+        "done",
+        "outline"
+      ]
+    },
+    {
       "name": "checkmark-done-sharp",
       "tags": [
         "checkmark",
         "done",
         "sharp"
+      ]
+    },
+    {
+      "name": "checkmark-outline",
+      "tags": [
+        "checkmark",
+        "outline"
       ]
     },
     {
@@ -2074,6 +2220,14 @@
       ]
     },
     {
+      "name": "chevron-back-outline",
+      "tags": [
+        "back",
+        "chevron",
+        "outline"
+      ]
+    },
+    {
       "name": "chevron-back-sharp",
       "tags": [
         "back",
@@ -2112,6 +2266,14 @@
         "circle",
         "down",
         "sharp"
+      ]
+    },
+    {
+      "name": "chevron-down-outline",
+      "tags": [
+        "chevron",
+        "down",
+        "outline"
       ]
     },
     {
@@ -2156,6 +2318,14 @@
       ]
     },
     {
+      "name": "chevron-forward-outline",
+      "tags": [
+        "chevron",
+        "forward",
+        "outline"
+      ]
+    },
+    {
       "name": "chevron-forward-sharp",
       "tags": [
         "chevron",
@@ -2193,6 +2363,14 @@
         "chevron",
         "circle",
         "sharp",
+        "up"
+      ]
+    },
+    {
+      "name": "chevron-up-outline",
+      "tags": [
+        "chevron",
+        "outline",
         "up"
       ]
     },
@@ -2801,6 +2979,13 @@
       ]
     },
     {
+      "name": "contract-outline",
+      "tags": [
+        "contract",
+        "outline"
+      ]
+    },
+    {
       "name": "contract-sharp",
       "tags": [
         "contract",
@@ -3247,6 +3432,13 @@
       ]
     },
     {
+      "name": "ellipse-sharp",
+      "tags": [
+        "ellipse",
+        "sharp"
+      ]
+    },
+    {
       "name": "ellipsis-horizontal",
       "tags": [
         "ellipsis",
@@ -3271,11 +3463,28 @@
       ]
     },
     {
+      "name": "ellipsis-horizontal-circle-sharp",
+      "tags": [
+        "circle",
+        "ellipsis",
+        "horizontal",
+        "sharp"
+      ]
+    },
+    {
       "name": "ellipsis-horizontal-outline",
       "tags": [
         "ellipsis",
         "horizontal",
         "outline"
+      ]
+    },
+    {
+      "name": "ellipsis-horizontal-sharp",
+      "tags": [
+        "ellipsis",
+        "horizontal",
+        "sharp"
       ]
     },
     {
@@ -3303,10 +3512,27 @@
       ]
     },
     {
+      "name": "ellipsis-vertical-circle-sharp",
+      "tags": [
+        "circle",
+        "ellipsis",
+        "sharp",
+        "vertical"
+      ]
+    },
+    {
       "name": "ellipsis-vertical-outline",
       "tags": [
         "ellipsis",
         "outline",
+        "vertical"
+      ]
+    },
+    {
+      "name": "ellipsis-vertical-sharp",
+      "tags": [
+        "ellipsis",
+        "sharp",
         "vertical"
       ]
     },
@@ -3355,6 +3581,13 @@
       "tags": [
         "expand",
         "resize"
+      ]
+    },
+    {
+      "name": "expand-outline",
+      "tags": [
+        "expand",
+        "outline"
       ]
     },
     {
@@ -4453,6 +4686,14 @@
       ]
     },
     {
+      "name": "heart-half-outline",
+      "tags": [
+        "half",
+        "heart",
+        "outline"
+      ]
+    },
+    {
       "name": "heart-half-sharp",
       "tags": [
         "half",
@@ -4546,6 +4787,13 @@
         "information",
         "question",
         "sharp"
+      ]
+    },
+    {
+      "name": "help-outline",
+      "tags": [
+        "help",
+        "outline"
       ]
     },
     {
@@ -4739,6 +4987,13 @@
         "information",
         "knowledge",
         "sharp"
+      ]
+    },
+    {
+      "name": "information-outline",
+      "tags": [
+        "information",
+        "outline"
       ]
     },
     {
@@ -5799,6 +6054,13 @@
       ]
     },
     {
+      "name": "male-outline",
+      "tags": [
+        "male",
+        "outline"
+      ]
+    },
+    {
       "name": "male-sharp",
       "tags": [
         "boy",
@@ -6157,6 +6419,13 @@
       "name": "move",
       "tags": [
         "move"
+      ]
+    },
+    {
+      "name": "move-outline",
+      "tags": [
+        "move",
+        "outline"
       ]
     },
     {
@@ -7556,10 +7825,42 @@
       ]
     },
     {
+      "name": "radio-off-outline",
+      "tags": [
+        "off",
+        "outline",
+        "radio"
+      ]
+    },
+    {
+      "name": "radio-off-sharp",
+      "tags": [
+        "off",
+        "radio",
+        "sharp"
+      ]
+    },
+    {
       "name": "radio-on",
       "tags": [
         "on",
         "radio"
+      ]
+    },
+    {
+      "name": "radio-on-outline",
+      "tags": [
+        "on",
+        "outline",
+        "radio"
+      ]
+    },
+    {
+      "name": "radio-on-sharp",
+      "tags": [
+        "on",
+        "radio",
+        "sharp"
       ]
     },
     {
@@ -7722,6 +8023,13 @@
       ]
     },
     {
+      "name": "refresh-outline",
+      "tags": [
+        "outline",
+        "refresh"
+      ]
+    },
+    {
       "name": "refresh-sharp",
       "tags": [
         "circle",
@@ -7759,6 +8067,13 @@
         "circle",
         "reload",
         "sharp"
+      ]
+    },
+    {
+      "name": "reload-outline",
+      "tags": [
+        "outline",
+        "reload"
       ]
     },
     {
@@ -7804,6 +8119,13 @@
         "remove",
         "sharp",
         "subtract"
+      ]
+    },
+    {
+      "name": "remove-outline",
+      "tags": [
+        "outline",
+        "remove"
       ]
     },
     {
@@ -7892,6 +8214,13 @@
       ]
     },
     {
+      "name": "repeat-outline",
+      "tags": [
+        "outline",
+        "repeat"
+      ]
+    },
+    {
       "name": "repeat-sharp",
       "tags": [
         "repeat",
@@ -7901,6 +8230,13 @@
     {
       "name": "resize",
       "tags": [
+        "resize"
+      ]
+    },
+    {
+      "name": "resize-outline",
+      "tags": [
+        "outline",
         "resize"
       ]
     },
@@ -7943,6 +8279,15 @@
       ]
     },
     {
+      "name": "return-down-back-outline",
+      "tags": [
+        "back",
+        "down",
+        "outline",
+        "return"
+      ]
+    },
+    {
       "name": "return-down-back-sharp",
       "tags": [
         "back",
@@ -7956,6 +8301,15 @@
       "tags": [
         "down",
         "forward",
+        "return"
+      ]
+    },
+    {
+      "name": "return-down-forward-outline",
+      "tags": [
+        "down",
+        "forward",
+        "outline",
         "return"
       ]
     },
@@ -7977,6 +8331,15 @@
       ]
     },
     {
+      "name": "return-up-back-outline",
+      "tags": [
+        "back",
+        "outline",
+        "return",
+        "up"
+      ]
+    },
+    {
       "name": "return-up-back-sharp",
       "tags": [
         "back",
@@ -7989,6 +8352,15 @@
       "name": "return-up-forward",
       "tags": [
         "forward",
+        "return",
+        "up"
+      ]
+    },
+    {
+      "name": "return-up-forward-outline",
+      "tags": [
+        "forward",
+        "outline",
         "return",
         "up"
       ]
@@ -8435,6 +8807,13 @@
       ]
     },
     {
+      "name": "shuffle-outline",
+      "tags": [
+        "outline",
+        "shuffle"
+      ]
+    },
+    {
       "name": "shuffle-sharp",
       "tags": [
         "random",
@@ -8547,6 +8926,14 @@
         "favorite",
         "half",
         "rate",
+        "star"
+      ]
+    },
+    {
+      "name": "star-half-outline",
+      "tags": [
+        "half",
+        "outline",
         "star"
       ]
     },
@@ -8725,6 +9112,14 @@
       ]
     },
     {
+      "name": "swap-horizontal-outline",
+      "tags": [
+        "horizontal",
+        "outline",
+        "swap"
+      ]
+    },
+    {
       "name": "swap-horizontal-sharp",
       "tags": [
         "horizontal",
@@ -8735,6 +9130,14 @@
     {
       "name": "swap-vertical",
       "tags": [
+        "swap",
+        "vertical"
+      ]
+    },
+    {
+      "name": "swap-vertical-outline",
+      "tags": [
+        "outline",
         "swap",
         "vertical"
       ]
@@ -8773,6 +9176,13 @@
       "tags": [
         "circle",
         "sharp",
+        "sync"
+      ]
+    },
+    {
+      "name": "sync-outline",
+      "tags": [
+        "outline",
         "sync"
       ]
     },
@@ -9235,6 +9645,14 @@
       ]
     },
     {
+      "name": "trending-down-outline",
+      "tags": [
+        "down",
+        "outline",
+        "trending"
+      ]
+    },
+    {
       "name": "trending-down-sharp",
       "tags": [
         "down",
@@ -9245,6 +9663,14 @@
     {
       "name": "trending-up",
       "tags": [
+        "trending",
+        "up"
+      ]
+    },
+    {
+      "name": "trending-up-outline",
+      "tags": [
+        "outline",
         "trending",
         "up"
       ]

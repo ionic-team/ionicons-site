@@ -77,11 +77,7 @@ export class IoniconsSite {
 
     this.data.icons = dat;
 
-    // this.data.icons = dat.map((o: any) => {
-    //   o.icons = o.icons.reverse();
-    //   o.name = o.icons[0].split('-').slice(1).join('-');
-    //   return o;
-    // });
+
   }
 
   checkScroll() {

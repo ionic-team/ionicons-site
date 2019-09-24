@@ -413,3 +413,12 @@ pre {
   line-height: 20px;
   color: var(--color-pale-sky);
 }
+
+.download-link svg #arrow {
+  transition: 0.2s transform;
+  transform: translate(0, 0px);
+}
+
+.download-link:hover svg #arrow {
+  transform: translate(0, 1px);
+}

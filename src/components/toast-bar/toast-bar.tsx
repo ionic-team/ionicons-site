@@ -14,6 +14,7 @@ export class ToastBar {
   };
   @Prop() selectedIconType?: string;
   @Prop() typeSuffix?: string;
+  @Prop() version?: string;
 
   @State() showCopiedConfirm?: number;
   @State() hadIconOnce = false;
@@ -69,58 +70,32 @@ export class ToastBar {
     }
   }
 
+  handleSVGDownload(ev, name) {
+    ev.preventDefault();
+    fetch(ev.target.href)
+      .then(response => response.text())
+      .then((svg) => {
+        const encodedFile = `data:image/svg+xml;utf8,${svg}`;
+        const el = document.createElement('a');
+        el.setAttribute('href', encodedFile);
+        el.setAttribute('download', name);
+        el.style.display = 'none';
+        document.body.appendChild(el);
+        el.click();
+        document.body.removeChild(el);
+      });
+  }
+
   render() {
     let snippetLength;
     let iconType;
     let iconAttrName;
-    let activeDownloadLinks = null;
 
     if (this.selectedIcon) {
       if (!this.hadIconOnce) this.hadIconOnce = true;
-
       iconAttrName = this.selectedIcon.name + this.typeSuffix;
       iconType = this.selectedIcon.icons[0].startsWith('logo-') ? 'logo' : this.selectedIconType;
-
-      if (iconType === 'logo') iconAttrName = 'logo-' + iconAttrName;
-
       snippetLength = (`<ion-icon name="${ iconAttrName }"></ion-icon>`.length * 8) + 32;
-
-      activeDownloadLinks = this.selectedIcon.icons.map((name) => {
-        const type = name.substr(0, name.indexOf('-'));
-        console.log(name)
-
-        let heading;
-        if (name.includes('-outline')) {
-          heading = 'OUTLINE';
-        } else if (name.includes('-sharp')) {
-          heading = 'SHARP';
-        } else if (name.includes('logo-')) {
-          heading = 'LOGO';
-        } else {
-          heading = 'DEFAULT';
-        }
-
-        return (
-          <div class="toast-bar__section">
-            <div class="toast-bar__section-header">
-              <h6>{ heading }</h6>
-            </div>
-            <div class="btn-group">
-              <div class="btn btn--gray btn--small btn--icon">
-                <svg>
-                  <use xlinkHref={`#${name}`}/>
-                </svg>
-              </div>
-              <a class="btn btn--gray btn--small" download={`/ionicons/svg/${name}.svg`} href={`/ionicons/svg/${name}.svg`}>
-                <svg>
-                  <use xlinkHref={`#download`}/>
-                </svg>
-                SVG
-              </a>
-            </div>
-          </div>
-        );
-      });
     }
 
     return (
@@ -153,11 +128,27 @@ export class ToastBar {
                       {'<'}<span class="yellow">ion-icon</span>&nbsp;<span class="orange">name</span>{'='}<span class="green">{`"${iconAttrName}"`}</span>{'>'}{'</'}<span class="yellow">ion-icon</span>{'>'}
                     </span>
                   </code>
-
                 </div>
 
-                { activeDownloadLinks }
+                <div class="toast-bar__section">
+                  <div class="btn-group">
+                    <div class="btn btn--gray btn--small btn--icon">
+                      <svg>
+                        <use xlinkHref={`#${iconAttrName}`}/>
+                      </svg>
+                    </div>
 
+                    <a class="btn btn--gray btn--small download-link" href={`https://unpkg.com/ionicons@${this.version}/dist/ionicons/svg/${iconAttrName}.svg`} onClick={(ev) => this.handleSVGDownload(ev, iconAttrName)}>
+                      <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                          <g>
+                            <rect fill="#586980" x="0" y="9" width="9" height="2" rx="1"></rect>
+                            <path d="M5,6.26776695 L7.26776695,4 L7.97487373,4.70710678 L4.70710678,7.97487373 L4.48743687,7.75520382 L4.26776695,7.97487373 L1,4.70710678 L1.70710678,4 L4,6.29289322 L4,0 L5,0 L5,6.26776695 Z" id="arrow" fill="#96abdc"></path>
+                          </g>
+                      </svg>
+                      SVG
+                    </a>
+                  </div>
+                </div>
               </div>
             }
           </div>
