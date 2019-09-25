@@ -11,8 +11,8 @@ import content from './content';
 export class UsagePage {
   @Prop({ context: 'queue' }) queue!: QueueApi;
 
-  @State() exampleType = 'md';
-  @State() exampleIcon = 'heart';
+  @State() exampleName = 'heart';
+  @State() exampleSuffix = '';
 
   @Prop() match?: MatchResults;
   @Prop() data: any;
@@ -25,12 +25,22 @@ export class UsagePage {
       iconNames = iconNames.concat(o.icons);
     });
 
-    const hash = window.location.hash.replace('#', '');
+    let hash = window.location.hash.replace('#', '');
+    if (hash.includes('logo-')) {
+      this.exampleName = hash;
+      return;
+    }
 
     if (iconNames.includes(hash)) {
-      const splt = hash.split('-');
-      this.exampleType = splt[0];
-      this.exampleIcon = splt[1];
+
+      ['-outline', '-sharp'].forEach((suffix) => {
+        if (hash.includes(suffix)) {
+          hash = hash.replace(suffix, '');
+          this.exampleSuffix = suffix;
+        }
+      })
+
+      this.exampleName = hash;
     }
   }
 
@@ -53,7 +63,7 @@ export class UsagePage {
        <div class="wrapper">
          <div class="container">
            <div class="content">
-             { content(this.data.version, this.exampleType, this.exampleIcon) }
+             { content(this.data.version, this.exampleName, this.exampleSuffix) }
            </div>
          </div>
        </div>

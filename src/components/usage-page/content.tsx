@@ -1,11 +1,16 @@
 import { h } from '@stencil/core';
 import hljs from 'highlight.js';
 
-export default function(version: string, type = 'md', name = 'heart') {
+export default function(version: string, name = 'heart', suffix = '') {
+  let advancedUsageName = name;
+  if (name.includes('logo-')) {
+    advancedUsageName = 'heart';
+  }
+
   return (<div>
 
 <h1>Usage</h1>
-<p class="lead">Ionicons is a completely open-source icon set with 700+ icons crafted for web, iOS, Android, and desktop apps. Ionicons was built for <a href="https://ionicframework.com/">Ionic Framework</a>, so icons have both Material Design and iOS versions. When used with Ionic, the <code>ion-icon</code> component will automatically use the correct version based on your platform. Additionally, when used outside of Ionic, both <code>ios</code> and <code>md</code> platforms can be chosen by the application.</p>
+<p class="lead">Ionicons is a completely open-source icon set with 1,200+ icons crafted for web, iOS, Android, and desktop apps. Ionicons was made for <a href="https://ionicframework.com/">Ionic Framework</a>, a cross-platform hybrid and Progressive Web App framework.</p>
 
 <h2>Using the Web Component</h2>
 <p>The Iconicons Web Component is an easy and performant way to use Ionicons in your app. The component will dynamically load an SVG for each icon, so your app is only requesting the icons that you need.</p>
@@ -21,49 +26,31 @@ export default function(version: string, type = 'md', name = 'heart') {
 
 <h3 id="basic-usage">Basic usage</h3>
 <p>To use a built-in icon from the Ionicons package, populate the <code>name</code> attribute on the <code>ion-icon</code> component:</p>
-{(type === 'logo') ? highlight(
-`<ion-icon name="logo-${name}"></ion-icon>`
-) : highlight(
-`<ion-icon name="${name}"></ion-icon>`
+{highlight(
+`<ion-icon name="${name + suffix}"></ion-icon>`
 )}
 
+<h3 id="basic-usage">Custom icons</h3>
 <p>To use a custom SVG, provide its url in the <code>src</code> attribute to request the external SVG file. The <code>src</code> attribute works the same as <code>&lt;img src="..."&gt;</code> in that the url must be accessible from the webpage that's making a request for the image. Additionally, the external file can only be a valid <code>svg</code> and does not allow scripts or events within the <code>svg</code> element.</p>
 {highlight(
   `<ion-icon src="/path/to/external/file.svg"></ion-icon>`
 )}
 
-<h2>Platform specific icons</h2>
-<p>Many icons have both Material Design and iOS versions to provide Platform Continuity for users.</p>
-
-<p>Platform Continuity means that by default, ionicons running on iOS (Apple products such as iPhone and iPad) will display <code>ios</code> styled icons. Alternatively, ionicons running on devices with Material Design theme (commonly seen on Android devices) will see the <code>md</code> styled icons.</p>
-
-
-<h3>Platform Continuity Within Ionic Apps</h3>
-
-<p>Ionic will automatically use the correct version based on the platform. Note that this feature will only automatically kick-in for Ionic apps. When being used outside of an Ionic app, please see the "Outside Ionic App" section below.</p>
-
-<p>To specify the icon for each platform, use the <code>md</code> and <code>ios</code> attributes and provide the platform specific icon name.</p>
-{(type === 'logo') ? highlight(
-`<ion-icon ios="ios-heart" md="md-heart"></ion-icon>`
-) : highlight(
-`<ion-icon ios="ios-${name}" md="md-${name}"></ion-icon>`
+<h2>Variants</h2>
+<p>Each app icon in Ionicons has a <code>filled</code>, <code>outline</code> and <code>sharp</code> variant. These different variants are provided to make your app feel native to a variety of platforms. The filled variant uses the default name without a suffix. Note: Logo icons do not have outline or sharp variants.</p>
+{highlight(
+`<ion-icon name="${advancedUsageName}"></ion-icon> <!--filled-->
+<ion-icon name="${advancedUsageName}-outline"></ion-icon> <!--outline-->
+<ion-icon name="${advancedUsageName}-sharp"></ion-icon> <!--sharp-->`
 )}
 
-<h3>Platform Continuity Outside Ionic Apps</h3>
-
-<p>When using Ionicons without the <a href="https://ionicframework.com/">Ionic Framework</a>, the icon will default to the Material Design icon style. To specify the non-default icon style, add a platform prefix to the <code>name</code> attribute.</p>
-{(type === 'logo') ? highlight(
-`<ion-icon name="ios-heart"></ion-icon>`
-) : highlight(
-`<ion-icon name="ios-${name}"></ion-icon>`
-)}
-{(type === 'logo') ? highlight(
-`<ion-icon name="md-heart"></ion-icon>`
-) : highlight(
-`<ion-icon name="md-${name}"></ion-icon>`
+<h3>Platform specificity</h3>
+<p>When using icons in Ionic Framework you can specify different icons per platform. Use the <code>md</code> and <code>ios</code> attributes and provide the platform specific icon/variant name.</p>
+{highlight(
+`<ion-icon ios="${advancedUsageName}-outline" md="${advancedUsageName}-sharp"></ion-icon>`
 )}
 
-<h3>Icon sizes</h3>
+<h2>Size</h2>
 <p>To specify the icon size, you can use the <code>size</code> attribute for our pre-defined font sizes.</p>
 {highlight(
 `<ion-icon size="small"></ion-icon>
@@ -76,24 +63,23 @@ export default function(version: string, type = 'md', name = 'heart') {
 }`
 )}
 
-<h2>Using the Font Icon</h2>
-<p>The font icon is compatible with previous versions of Ionicons. If you're using Ionicons for the first time we strongly recommend using the <code>ion-icon</code> web component instead.</p>
-
-<p>An advantage to the font icon file is that all of the icons are in one file. A disadvantage to the font icon file is that all of the icons are in one file. Additionally, large font files have a negative impact on a webpage's time to first paint.</p>
-
-<p>In most cases it may be better to request a small number of svgs using the web component method. A bonus with the web component is that it uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer</a> to only request icons which are viewable by the users (icons above the fold). However, if a webpage has to show <em>many</em> icons at once (such as this website's homepage which is showing 700+ icons on one page), the font icon may be a better choice.</p>
-
-<h3>Installation</h3>
-<p>To embed the Ionicons font icon, copy this code into the <code>{`<head>`}</code> of the HTML document.</p>
+<h2>Color</h2>
+<p>Specify the icon color by applying the <code>color</code> CSS property on the <code>ion-icon</code> component.</p>
 {highlight(
-`<link href="https://unpkg.com/ionicons@${version}/dist/css/ionicons.min.css" rel="stylesheet">`
+`ion-icon {
+  color: blue;
+}`
 )}
 
-
-<h3>Basic usage</h3>
-<p>Use the <stencil-route-link url="/">icon index</stencil-route-link> to look up the name of the icon you want to use. The icon's CSS class name will be prefixed with <code>ion-</code>, followed by the platform attribute <code>md-</code>, <code>ios-</code> or <code>logo-</code> and completed wth the icon name.</p>
+<h2>Stroke weight</h2>
+<p>When using an <code>outline</code> icon variant it is possible to adjust the stroke weight, for improved visual balance relative to the icon's size or relative to the weight of adjacent text. You can set a specific size by applying the <code>--ionicon-stroke-weight</code> CSS custom property to the <code>ion-icon</code> component. The default value is <code>32px</code></p>
 {highlight(
-`<i class="icon ion-${type}-${name}"></i>`
+  `<ion-icon name="${advancedUsageName}-outline"></ion-icon>`
+)}
+{highlight(
+`ion-icon {
+  --ionicon-stroke-width: 16px;
+}`
 )}
 
 </div>); }

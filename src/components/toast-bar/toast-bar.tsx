@@ -116,7 +116,7 @@ export class ToastBar {
                       <span class="confirmation"><i class="ion ion-md-checkmark"></i>Copied</span>
                     </div>
                     <stencil-route-link
-                      url={`/usage#${iconType}-${ this.selectedIcon.name }`}
+                      url={`/usage#${iconAttrName}`}
                       onClick={() => this.toggleHeaderSearch.emit('hide')}>
                       Usage
                       <i class="ion ion-ios-arrow-forward"></i>
