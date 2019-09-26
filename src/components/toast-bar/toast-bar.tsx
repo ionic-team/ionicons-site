@@ -73,9 +73,16 @@ export class ToastBar {
   handleSVGDownload(ev, name) {
     ev.preventDefault();
     fetch(ev.target.href)
-      .then(response => response.text())
+      .then(response => {
+        if (response.ok) {
+          return response.text()
+        } else {
+          throw new Error('Unable to fetch icon.');
+        }
+
+      })
       .then((svg) => {
-        const encodedFile = `data:image/svg+xml;utf8,${svg}`;
+        const encodedFile = `data:image/svg+xml,${this.encodeSVG(svg)}`;
         const el = document.createElement('a');
         el.setAttribute('href', encodedFile);
         el.setAttribute('download', name);
@@ -84,6 +91,15 @@ export class ToastBar {
         el.click();
         document.body.removeChild(el);
       });
+
+  }
+
+  encodeSVG (data) {
+    const symbols = /[\r\n%#()<>?\[\\\]^`{|}]/g;
+    data = data.replace( /"/g, '\'' );
+    data = data.replace( />\s{1,}</g, "><" );
+    data = data.replace( /\s{2,}/g, " " );
+    return data.replace( symbols, encodeURIComponent );
   }
 
   render() {
@@ -138,7 +154,7 @@ export class ToastBar {
                       </svg>
                     </div>
 
-                    <a class="btn btn--gray btn--small download-link" href={`https://unpkg.com/ionicons@${this.version}/dist/ionicons/svg/${iconAttrName}.svg`} onClick={(ev) => this.handleSVGDownload(ev, iconAttrName)}>
+                    <a class="btn btn--gray btn--small download-link" href={`https://unpkg.com/ionicons@${this.version}/dist/svg/${iconAttrName}.svg`} onClick={(ev) => this.handleSVGDownload(ev, iconAttrName)}>
                       <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1" xmlns="http://www.w3.org/2000/svg">
                           <g>
                             <rect fill="#586980" x="0" y="9" width="9" height="2" rx="1"></rect>

@@ -1,6 +1,6 @@
 {
   "name": "ionicons",
-  "version": "5.0.0-3",
+  "version": "5.0.0-7",
   "icons": [
     {
       "name": "add",
@@ -2120,13 +2120,6 @@
         "checkmark",
         "circle",
         "sharp"
-      ]
-    },
-    {
-      "name": "checkmark-done",
-      "tags": [
-        "checkmark",
-        "done"
       ]
     },
     {
@@ -5466,17 +5459,15 @@
       ]
     },
     {
-      "name": "logo-buffer-62",
+      "name": "logo-bitcoin",
       "tags": [
-        "62",
-        "buffer",
+        "bitcoin",
         "logo"
       ]
     },
     {
-      "name": "logo-buffer-63",
+      "name": "logo-buffer",
       "tags": [
-        "63",
         "buffer",
         "logo"
       ]
@@ -9151,6 +9142,26 @@
       ]
     },
     {
+      "name": "switch",
+      "tags": [
+        "switch"
+      ]
+    },
+    {
+      "name": "switch-outline",
+      "tags": [
+        "outline",
+        "switch"
+      ]
+    },
+    {
+      "name": "switch-sharp",
+      "tags": [
+        "sharp",
+        "switch"
+      ]
+    },
+    {
       "name": "sync",
       "tags": [
         "sync"
@@ -9500,26 +9511,6 @@
       "tags": [
         "sharp",
         "today"
-      ]
-    },
-    {
-      "name": "toggle",
-      "tags": [
-        "toggle"
-      ]
-    },
-    {
-      "name": "toggle-outline",
-      "tags": [
-        "outline",
-        "toggle"
-      ]
-    },
-    {
-      "name": "toggle-sharp",
-      "tags": [
-        "sharp",
-        "toggle"
       ]
     },
     {
