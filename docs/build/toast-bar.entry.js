@@ -78,16 +78,14 @@ const ToastBar = class {
     }
     render() {
         let snippetLength;
-        let iconType;
         let iconAttrName;
         if (this.selectedIcon) {
             if (!this.hadIconOnce)
                 this.hadIconOnce = true;
             iconAttrName = this.selectedIcon.name + this.typeSuffix;
-            iconType = this.selectedIcon.icons[0].startsWith('logo-') ? 'logo' : this.selectedIconType;
             snippetLength = (`<ion-icon name="${iconAttrName}"></ion-icon>`.length * 8) + 32;
         }
-        return (h("div", { class: `toast-bar ${this.selectedIcon ? 'isVisible' : ''} ${!this.selectedIcon && this.hadIconOnce ? 'isHidden' : ''} ${!this.hadIconOnce ? 'preload' : ''}`, onClick: ev => ev.stopPropagation() }, h("div", { class: "container" }, h("div", { class: "toast-bar--inner" }, this.selectedIcon && h("h4", null, this.selectedIcon.name), this.selectedIcon &&
+        return (h("div", { class: `toast-bar ${this.selectedIcon ? 'isVisible' : ''} ${!this.selectedIcon && this.hadIconOnce ? 'isHidden' : ''} ${!this.hadIconOnce ? 'preload' : ''}`, onClick: ev => ev.stopPropagation() }, h("div", { class: "container" }, h("div", { class: "toast-bar--inner" }, this.selectedIcon && h("h4", null, iconAttrName), this.selectedIcon &&
             h("div", { class: "toast-bar__details" }, h("div", { class: "toast-bar__section", style: { maxWidth: snippetLength + 'px' } }, h("div", { class: "toast-bar__section-header" }, h("div", null, h("h6", null, "Web component code"), h("span", { class: "confirmation" }, h("i", { class: "ion ion-md-checkmark" }), "Copied")), h("stencil-route-link", { url: `/usage#${iconAttrName}`, onClick: () => this.toggleHeaderSearch.emit('hide') }, "Usage", h("i", { class: "ion ion-ios-arrow-forward" }))), h("code", null, h("span", { class: "hover-highlight", onClick: () => this.handleCodeClick(iconAttrName) }, '<', h("span", { class: "yellow" }, "ion-icon"), "\u00A0", h("span", { class: "orange" }, "name"), '=', h("span", { class: "green" }, `"${iconAttrName}"`), '>', '</', h("span", { class: "yellow" }, "ion-icon"), '>'))), h("div", { class: "toast-bar__section" }, h("div", { class: "btn-group" }, h("div", { class: "btn btn--gray btn--small btn--icon" }, h("svg", null, h("use", { xlinkHref: `#${iconAttrName}` }))), h("a", { class: "btn btn--gray btn--small download-link", href: `https://unpkg.com/ionicons@${this.version}/dist/svg/${iconAttrName}.svg`, onClick: (ev) => this.handleSVGDownload(ev, iconAttrName) }, h("svg", { width: "9px", height: "11px", viewBox: "0 0 9 11", version: "1.1", xmlns: "http://www.w3.org/2000/svg" }, h("g", null, h("rect", { fill: "#586980", x: "0", y: "9", width: "9", height: "2", rx: "1" }), h("path", { d: "M5,6.26776695 L7.26776695,4 L7.97487373,4.70710678 L4.70710678,7.97487373 L4.48743687,7.75520382 L4.26776695,7.97487373 L1,4.70710678 L1.70710678,4 L4,6.29289322 L4,0 L5,0 L5,6.26776695 Z", id: "arrow", fill: "#96abdc" }))), "SVG"))))))));
     }
     get el() { return getElement(this); }

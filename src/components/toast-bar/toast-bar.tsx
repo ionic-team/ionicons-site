@@ -104,13 +104,11 @@ export class ToastBar {
 
   render() {
     let snippetLength;
-    let iconType;
     let iconAttrName;
 
     if (this.selectedIcon) {
       if (!this.hadIconOnce) this.hadIconOnce = true;
       iconAttrName = this.selectedIcon.name + this.typeSuffix;
-      iconType = this.selectedIcon.icons[0].startsWith('logo-') ? 'logo' : this.selectedIconType;
       snippetLength = (`<ion-icon name="${ iconAttrName }"></ion-icon>`.length * 8) + 32;
     }
 
@@ -121,7 +119,7 @@ export class ToastBar {
 
         <div class="container">
           <div class="toast-bar--inner">
-            {this.selectedIcon && <h4>{this.selectedIcon.name}</h4>}
+            {this.selectedIcon && <h4>{iconAttrName}</h4>}
             {this.selectedIcon &&
               <div class="toast-bar__details">
 
