@@ -22814,7 +22814,12 @@ function content (version, name = 'heart', suffix = '') {
         highlight$1(`<ion-icon name="${advancedUsageName}-outline"></ion-icon>`),
         highlight$1(`ion-icon {
   --ionicon-stroke-width: 16px;
-}`)));
+}`),
+        h("h2", null, "Migrating from v4"),
+        h("p", null,
+            "See the ",
+            h("a", { href: "https://github.com/ionic-team/ionicons/blob/master/CHANGELOG.md" }, "changelog"),
+            " for a list of icon deletions/renames.")));
 }
 function highlight$1(text) {
     return (h("div", { class: "styled-code" },

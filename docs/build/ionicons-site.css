@@ -238,6 +238,7 @@ p.lead {
   margin-right: 4px;
 }
 
+
 .btn--icon {
   width: 36px;
   height: 32px;
@@ -439,4 +440,38 @@ pre {
 .download-link:hover svg #arrow {
   -webkit-transform: translate(0, 1px);
   transform: translate(0, 1px);
+}
+
+
+.loading-animation {
+  -webkit-animation-name: spin;
+  animation-name: spin;
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  } to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  } to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

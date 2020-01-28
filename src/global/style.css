@@ -228,6 +228,7 @@ p.lead {
   margin-right: 4px;
 }
 
+
 .btn--icon {
   width: 36px;
   height: 32px;
@@ -421,4 +422,21 @@ pre {
 
 .download-link:hover svg #arrow {
   transform: translate(0, 1px);
+}
+
+
+.loading-animation {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
 }

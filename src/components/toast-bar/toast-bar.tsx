@@ -17,6 +17,7 @@ export class ToastBar {
   @Prop() version?: string;
 
   @State() showCopiedConfirm?: number;
+  @State() isSVGDownloading = false;
   @State() hadIconOnce = false;
   @State() touchStartY?: number;
   @State() touchEndY?: number;
@@ -72,6 +73,7 @@ export class ToastBar {
 
   handleSVGDownload(ev, name) {
     ev.preventDefault();
+    this.isSVGDownloading = true;
     fetch(ev.target.href)
       .then(response => {
         if (response.ok) {
@@ -79,19 +81,18 @@ export class ToastBar {
         } else {
           throw new Error('Unable to fetch icon.');
         }
-
       })
       .then((svg) => {
+        this.isSVGDownloading = false;
         const encodedFile = `data:image/svg+xml,${this.encodeSVG(svg)}`;
         const el = document.createElement('a');
         el.setAttribute('href', encodedFile);
-        el.setAttribute('download', name);
+        el.setAttribute('download', `${name}.svg`);
         el.style.display = 'none';
         document.body.appendChild(el);
         el.click();
         document.body.removeChild(el);
       });
-
   }
 
   encodeSVG (data) {
@@ -153,12 +154,24 @@ export class ToastBar {
                     </div>
 
                     <a class="btn btn--gray btn--small download-link" href={`https://unpkg.com/ionicons@${this.version}/dist/svg/${iconAttrName}.svg`} onClick={(ev) => this.handleSVGDownload(ev, iconAttrName)}>
-                      <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                          <g>
-                            <rect fill="#586980" x="0" y="9" width="9" height="2" rx="1"></rect>
-                            <path d="M5,6.26776695 L7.26776695,4 L7.97487373,4.70710678 L4.70710678,7.97487373 L4.48743687,7.75520382 L4.26776695,7.97487373 L1,4.70710678 L1.70710678,4 L4,6.29289322 L4,0 L5,0 L5,6.26776695 Z" id="arrow" fill="#96abdc"></path>
-                          </g>
-                      </svg>
+                      { this.isSVGDownloading
+                        ? <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="loading-animation">
+                            <path d="M11 7C11 4.79086 9.20914 3 7 3C4.79086 3 3 4.79086 3 7C3 9.20914 4.79086 11 7 11" stroke="url(#paint0_angular)"/>
+                            <defs>
+                              <radialGradient id="paint0_angular" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(7 7) rotate(90) scale(4)">
+                                <stop stop-color="#96ABDC" stop-opacity="0"/>
+                                <stop offset="0.75" stop-color="#96ABDC"/>
+                              </radialGradient>
+                            </defs>
+                          </svg>
+
+                        : <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <rect fill="#586980" x="0" y="9" width="9" height="2" rx="1"></rect>
+                                <path d="M5,6.26776695 L7.26776695,4 L7.97487373,4.70710678 L4.70710678,7.97487373 L4.48743687,7.75520382 L4.26776695,7.97487373 L1,4.70710678 L1.70710678,4 L4,6.29289322 L4,0 L5,0 L5,6.26776695 Z" id="arrow" fill="#96abdc"></path>
+                              </g>
+                          </svg>
+                      }
                       SVG
                     </a>
                   </div>

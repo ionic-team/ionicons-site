@@ -82,6 +82,9 @@ export default function(version: string, name = 'heart', suffix = '') {
 }`
 )}
 
+<h2>Migrating from v4</h2>
+<p>See the <a href="https://github.com/ionic-team/ionicons/blob/master/CHANGELOG.md">changelog</a> for a list of icon deletions/renames.</p>
+
 </div>); }
 
 function highlight(text: string) {
