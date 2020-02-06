@@ -9,7 +9,7 @@ export class LandingPage {
   @Element() el!: Element;
 
   @State() selectedIcon = '';
-  @State() selectedIconType = 'filled';
+  @State() selectedIconType = 'outline';
   @State() isHeaderSearchVisible = false;
 
   @Prop() query = '';
@@ -126,14 +126,14 @@ export class LandingPage {
                   <h4>App icons</h4>
                   <ul class="toggle">
                     <li
-                      class={`toggle__item ${(this.selectedIconType === 'filled') ? 'active' : ''}`}
-                      onClick={ev => this.handleToggleClick(ev, 'filled')}>
-                        Filled
-                    </li>
-                    <li
                       class={`toggle__item ${(this.selectedIconType === 'outline') ? 'active' : ''}`}
                       onClick={ev => this.handleToggleClick(ev, 'outline')}>
                         Outline
+                    </li>
+                    <li
+                      class={`toggle__item ${(this.selectedIconType === 'filled') ? 'active' : ''}`}
+                      onClick={ev => this.handleToggleClick(ev, 'filled')}>
+                        Filled
                     </li>
                     <li
                       class={`toggle__item ${(this.selectedIconType === 'sharp') ? 'active' : ''}`}

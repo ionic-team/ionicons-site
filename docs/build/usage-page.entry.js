@@ -1,5 +1,5 @@
 import { h, r as registerInstance, d as getContext } from './core-2191ed9d.js';
-import { c as createCommonjsModule } from './_commonjsHelpers-91036208.js';
+import { c as createCommonjsModule } from './_commonjsHelpers-8038b6d5.js';
 
 var highlight = createCommonjsModule(function (module, exports) {
 /*
