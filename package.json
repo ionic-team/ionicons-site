@@ -15,9 +15,10 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --prerender && npm run build.zip",
+    "build": "npm run build.sprite && stencil build --prerender && npm run build.zip",
+    "build.sprite": "node scripts/build-sprite.js",
     "build.zip": "node scripts/build-zip.js",
-    "start": "stencil build --dev --watch --serve",
+    "start": "npm run build.sprite && stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
@@ -33,7 +34,7 @@
     "@stencil/router": "^1.0.1",
     "@types/highlight.js": "^9.12.3",
     "highlight.js": "^9.15.8",
-    "ionicons": "4.5.10-1",
+    "ionicons": "5.0.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.1"
   }

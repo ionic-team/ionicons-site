@@ -9,7 +9,7 @@ export class LandingPage {
   @Element() el!: Element;
 
   @State() selectedIcon = '';
-  @State() selectedIconType = 'md';
+  @State() selectedIconType = 'filled';
   @State() isHeaderSearchVisible = false;
 
   @Prop() query = '';
@@ -58,21 +58,16 @@ export class LandingPage {
     this.data.icons.forEach((iconData: any) => {
       if (search === '' || iconData.tags.some((t: any) => t.indexOf(search) > -1)) {
 
-        iconData.icons.forEach((iconName: any) => {
-          const iconType = iconName.substr(0, iconName.indexOf('-'));
+        const iconType = iconData.name.substr(0, iconData.name.indexOf('-'));
 
-          switch (iconType) {
-            case 'ios':
-              results['icon'].push({ name: iconData.name });
-              break;
-            case 'logo':
-              results['logo'].push({ name: iconData.name, icon: iconName });
-              break;
-            default:
-              return;
-          }
-        });
-
+        switch (iconType) {
+          case 'logo':
+            results['logo'].push({name: iconData.name});
+            break;
+          default:
+            results['icon'].push({name: iconData.name});
+            return;
+        }
       }
     });
 
@@ -94,15 +89,26 @@ export class LandingPage {
     this.selectedIcon = name;
   }
 
-  handleToggleClick(ev: MouseEvent) {
+  handleToggleClick(ev: MouseEvent, type: string) {
     ev.stopPropagation();
-    this.selectedIconType = (this.selectedIconType === 'md')
-     ? 'ios' : 'md';
+    this.selectedIconType = type;
   }
 
   render() {
     const results = this.filterIcons();
     const selectedIcon = this.data.icons.find(o => o.name === this.selectedIcon);
+
+    let typeSuffix;
+    switch (this.selectedIconType) {
+      case 'outline':
+        typeSuffix = '-outline';
+        break;
+      case 'sharp':
+        typeSuffix = '-sharp';
+        break;
+      default:
+        typeSuffix = '';
+    }
 
     if (!results.icon.length && !results.logo.length && this.isHeaderSearchVisible) document.documentElement!.scrollTop = 0;
 
@@ -120,14 +126,19 @@ export class LandingPage {
                   <h4>App icons</h4>
                   <ul class="toggle">
                     <li
-                      class={`toggle__item ${(this.selectedIconType === 'md') ? 'active' : ''}`}
-                      onClick={ev => this.handleToggleClick(ev)}>
-                        Material style
+                      class={`toggle__item ${(this.selectedIconType === 'filled') ? 'active' : ''}`}
+                      onClick={ev => this.handleToggleClick(ev, 'filled')}>
+                        Filled
                     </li>
                     <li
-                      class={`toggle__item ${(this.selectedIconType === 'ios') ? 'active' : ''}`}
-                      onClick={ev => this.handleToggleClick(ev)}>
-                      iOS style
+                      class={`toggle__item ${(this.selectedIconType === 'outline') ? 'active' : ''}`}
+                      onClick={ev => this.handleToggleClick(ev, 'outline')}>
+                        Outline
+                    </li>
+                    <li
+                      class={`toggle__item ${(this.selectedIconType === 'sharp') ? 'active' : ''}`}
+                      onClick={ev => this.handleToggleClick(ev, 'sharp')}>
+                        Sharp
                     </li>
                   </ul>
                 </div>
@@ -140,7 +151,9 @@ export class LandingPage {
                       onClick={(ev) => this.handleIconClick(ev, icon.name)}
                       onMouseEnter={(ev) => this.handleIconMouseEnter(ev)}
                       onMouseLeave={(ev) => this.handleIconMouseLeave(ev)}>
-                        <i class={`ion ion-${this.selectedIconType}-${icon.name}`}></i>
+                        <svg>
+                          <use xlinkHref={`#${icon.name + typeSuffix}`}/>
+                        </svg>
                     </span>
                   ))}
                 </div>
@@ -165,8 +178,9 @@ export class LandingPage {
                     onClick={(ev) => this.handleIconClick(ev, icon.name)}
                     onMouseEnter={(ev) => this.handleIconMouseEnter(ev)}
                     onMouseLeave={(ev) => this.handleIconMouseLeave(ev)}>
-
-                    <i class={'ion ion-' + icon.icon}></i>
+                      <svg>
+                        <use xlinkHref={`#${icon.name}`}/>
+                      </svg>
                   </span>
                 ))}
               </div>
@@ -183,7 +197,9 @@ export class LandingPage {
 
         <toast-bar
           selectedIcon={selectedIcon}
-          selectedIconType={this.selectedIconType}>
+          selectedIconType={this.selectedIconType}
+          typeSuffix={typeSuffix}
+          version={this.data.version}>
         </toast-bar>
 
       </div>

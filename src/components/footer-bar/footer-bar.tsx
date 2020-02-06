@@ -26,7 +26,8 @@ export class FooterBar {
             <a href="cheatsheet.html">Cheatsheet</a>
             <a href="/v1">v1</a>
             <a href="/v2">v2</a>
-            <a href="https://ionicframework.com/docs/ionicons/">v3</a>
+            <a href="https://ionicframework.com/docs/v3/ionicons/">v3</a>
+            <a href="/v4/">v4</a>
             <a href="https://ionicframework.com/">Ionic Framework</a>
           </div>
         </div>

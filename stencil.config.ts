@@ -14,15 +14,15 @@ export const config: Config = {
       baseUrl: 'https://ionicons.com/',
       prerenderConfig: 'prerender.config.js',
       copy: [
-        { src: '../node_modules/ionicons/dist/css/ionicons.min.css', dest: './css/ionicons.min.css' },
         { src: '../node_modules/ionicons/dist/ionicons/', dest: './ionicons/' },
         { src: '../node_modules/ionicons/dist/ionicons.js', dest: './ionicons.js' },
         { src: '../node_modules/ionicons/dist/cheatsheet.html', dest: './cheatsheet.html' },
-        { src: '../node_modules/ionicons/dist/ionicons/data.json', dest: './data.json' },
-        { src: '../node_modules/ionicons/dist/fonts/', dest: './fonts/' },
+        { src: '../node_modules/ionicons/dist/ionicons.json', dest: './ionicons.json' },
+        { src: '../node_modules/ionicons/dist/ionicons.symbols.svg', dest: './ionicons.symbols.svg' },
 
         { src: '../archived/v1/', dest: './v1/' },
         { src: '../archived/v2/', dest: './v2/' },
+        { src: '../archived/v4/', dest: './v4/' },
         { src: './index.html', dest: './usage/index.html' },
         { src: './test', dest: './test' },
       ]

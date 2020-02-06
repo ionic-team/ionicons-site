@@ -41,6 +41,9 @@ export class IconSearch {
   render() {
     return (
       <div class={`search-input search-input--${this.size}`}>
+        <i class="search-input__icon">
+          <svg><use xlinkHref={`#search-outline`}/></svg>
+        </i>
 
         <input type="text"
           placeholder="Search icons..."
@@ -50,11 +53,10 @@ export class IconSearch {
         <i class={{
             'search-input__clear': true,
             'search-input__clear--active': this.showClearCtrl,
-            'ion': true,
-            'ion-md-close': true
           }}
-          onClick={this.handleClear.bind(this)}></i>
-
+          onClick={this.handleClear.bind(this)}>
+          <svg><use xlinkHref={`#close-outline`}/></svg>
+        </i>
       </div>
     );
   }

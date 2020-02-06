@@ -13,8 +13,11 @@ export class ToastBar {
     tags: string[]
   };
   @Prop() selectedIconType?: string;
+  @Prop() typeSuffix?: string;
+  @Prop() version?: string;
 
   @State() showCopiedConfirm?: number;
+  @State() isSVGDownloading = false;
   @State() hadIconOnce = false;
   @State() touchStartY?: number;
   @State() touchEndY?: number;
@@ -68,53 +71,46 @@ export class ToastBar {
     }
   }
 
+  handleSVGDownload(ev, name) {
+    ev.preventDefault();
+    this.isSVGDownloading = true;
+    fetch(ev.target.href)
+      .then(response => {
+        if (response.ok) {
+          return response.text()
+        } else {
+          throw new Error('Unable to fetch icon.');
+        }
+      })
+      .then((svg) => {
+        this.isSVGDownloading = false;
+        const encodedFile = `data:image/svg+xml,${this.encodeSVG(svg)}`;
+        const el = document.createElement('a');
+        el.setAttribute('href', encodedFile);
+        el.setAttribute('download', `${name}.svg`);
+        el.style.display = 'none';
+        document.body.appendChild(el);
+        el.click();
+        document.body.removeChild(el);
+      });
+  }
+
+  encodeSVG (data) {
+    const symbols = /[\r\n%#()<>?\[\\\]^`{|}]/g;
+    data = data.replace( /"/g, '\'' );
+    data = data.replace( />\s{1,}</g, "><" );
+    data = data.replace( /\s{2,}/g, " " );
+    return data.replace( symbols, encodeURIComponent );
+  }
+
   render() {
     let snippetLength;
-    let iconType;
     let iconAttrName;
-    let activeDownloadLinks = null;
 
     if (this.selectedIcon) {
       if (!this.hadIconOnce) this.hadIconOnce = true;
-
-      iconAttrName = this.selectedIcon.name;
-      iconType = this.selectedIcon.icons[0].startsWith('logo-') ? 'logo' : this.selectedIconType;
-
-      if (iconType === 'logo') iconAttrName = 'logo-' + iconAttrName;
-
+      iconAttrName = this.selectedIcon.name + this.typeSuffix;
       snippetLength = (`<ion-icon name="${ iconAttrName }"></ion-icon>`.length * 8) + 32;
-
-      activeDownloadLinks = this.selectedIcon.icons.map((name) => {
-        const type = name.substr(0, name.indexOf('-'));
-        let heading;
-        switch (type) {
-          case 'ios':
-            heading = 'iOS STYLE';
-            break;
-          case 'md':
-            heading = 'MATERIAL STYLE';
-            break;
-          case 'logo':
-            heading = 'LOGO';
-            break;
-        }
-        return (
-          <div class="toast-bar__section">
-            <div class="toast-bar__section-header">
-              <h6>{ heading }</h6>
-            </div>
-            <div class="btn-group">
-              <div class="btn btn--gray btn--small btn--icon">
-                <i class={'ion ion-' + name}></i>
-              </div>
-              <a class="btn btn--gray btn--small" download={`/ionicons/svg/${name}.svg`} href={`/ionicons/svg/${name}.svg`}>
-                <i class="ion ion-md-download"></i>
-                SVG
-              </a>
-            </div>
-          </div>
-        );
-      });
     }
 
     return (
@@ -124,7 +120,7 @@ export class ToastBar {
 
         <div class="container">
           <div class="toast-bar--inner">
-            {this.selectedIcon && <h4>{this.selectedIcon.name}</h4>}
+            {this.selectedIcon && <h4>{iconAttrName}</h4>}
             {this.selectedIcon &&
               <div class="toast-bar__details">
 
@@ -135,7 +131,7 @@ export class ToastBar {
                       <span class="confirmation"><i class="ion ion-md-checkmark"></i>Copied</span>
                     </div>
                     <stencil-route-link
-                      url={`/usage#${iconType}-${ this.selectedIcon.name }`}
+                      url={`/usage#${iconAttrName}`}
                       onClick={() => this.toggleHeaderSearch.emit('hide')}>
                       Usage
                       <i class="ion ion-ios-arrow-forward"></i>
@@ -147,11 +143,39 @@ export class ToastBar {
                       {'<'}<span class="yellow">ion-icon</span>&nbsp;<span class="orange">name</span>{'='}<span class="green">{`"${iconAttrName}"`}</span>{'>'}{'</'}<span class="yellow">ion-icon</span>{'>'}
                     </span>
                   </code>
-
                 </div>
 
-                { activeDownloadLinks }
+                <div class="toast-bar__section">
+                  <div class="btn-group">
+                    <div class="btn btn--gray btn--small btn--icon">
+                      <svg>
+                        <use xlinkHref={`#${iconAttrName}`}/>
+                      </svg>
+                    </div>
 
+                    <a class="btn btn--gray btn--small download-link" href={`https://unpkg.com/ionicons@${this.version}/dist/svg/${iconAttrName}.svg`} onClick={(ev) => this.handleSVGDownload(ev, iconAttrName)}>
+                      { this.isSVGDownloading
+                        ? <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="loading-animation">
+                            <path d="M11 7C11 4.79086 9.20914 3 7 3C4.79086 3 3 4.79086 3 7C3 9.20914 4.79086 11 7 11" stroke="url(#paint0_angular)"/>
+                            <defs>
+                              <radialGradient id="paint0_angular" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(7 7) rotate(90) scale(4)">
+                                <stop stop-color="#96ABDC" stop-opacity="0"/>
+                                <stop offset="0.75" stop-color="#96ABDC"/>
+                              </radialGradient>
+                            </defs>
+                          </svg>
+
+                        : <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <rect fill="#586980" x="0" y="9" width="9" height="2" rx="1"></rect>
+                                <path d="M5,6.26776695 L7.26776695,4 L7.97487373,4.70710678 L4.70710678,7.97487373 L4.48743687,7.75520382 L4.26776695,7.97487373 L1,4.70710678 L1.70710678,4 L4,6.29289322 L4,0 L5,0 L5,6.26776695 Z" id="arrow" fill="#96abdc"></path>
+                              </g>
+                          </svg>
+                      }
+                      SVG
+                    </a>
+                  </div>
+                </div>
               </div>
             }
           </div>

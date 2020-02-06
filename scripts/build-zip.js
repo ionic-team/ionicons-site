@@ -2,7 +2,7 @@ var fs = require('fs-extra');
 var path = require('path');
 var archiver = require('archiver');
 
-var svgsDir = path.join(__dirname, '..', 'node_modules', 'ionicons', 'dist', 'ionicons', 'svg');
+var svgsDir = path.join(__dirname, '..', 'node_modules', 'ionicons', 'dist', 'svg');
 var distzipDir = path.join(__dirname, '..', 'docs');
 var distzipFile = path.join(distzipDir, 'ionicons.designerpack.zip');
 

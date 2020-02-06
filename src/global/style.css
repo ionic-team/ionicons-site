@@ -222,10 +222,12 @@ p.lead {
   letter-spacing: 0.05em;
 }
 
-.btn--small .ion {
-  font-size: 14px;
+.btn--small svg {
+  width: 14px;
+  height: 14px;
   margin-right: 4px;
 }
+
 
 .btn--icon {
   width: 36px;
@@ -236,8 +238,9 @@ p.lead {
   color: #fff;
 }
 
-.btn--icon .ion {
-  font-size: 26px;
+.btn--icon svg {
+  width: 26px;
+  height: 26px;
   margin: 0;
 }
 
@@ -410,4 +413,30 @@ pre {
   font-size: 14px;
   line-height: 20px;
   color: var(--color-pale-sky);
+}
+
+.download-link svg #arrow {
+  transition: 0.2s transform;
+  transform: translate(0, 0px);
+}
+
+.download-link:hover svg #arrow {
+  transform: translate(0, 1px);
+}
+
+
+.loading-animation {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
 }

@@ -69,7 +69,7 @@ toast-bar {
   .toast-bar__details {
     flex: 1 0 auto;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
   }
 
@@ -158,9 +158,10 @@ toast-bar {
     margin-left: 12px;
   }
 
-  .toast-bar__section .confirmation .ion {
+  .toast-bar__section .confirmation svg {
     color: #aec6ff;
-    font-size: 14px;
+    width: 14px;
+    height: 14px;
     margin-right: 4px;
   }
 
