@@ -1,5 +1,5 @@
 import { h, r as registerInstance, d as getContext } from './core-2191ed9d.js';
-import { c as createCommonjsModule } from './_commonjsHelpers-91036208.js';
+import { c as createCommonjsModule } from './_commonjsHelpers-8038b6d5.js';
 
 var highlight = createCommonjsModule(function (module, exports) {
 /*
@@ -22802,7 +22802,9 @@ function content (version, name = 'heart', suffix = '') {
         h("p", null,
             "See the ",
             h("a", { href: "https://github.com/ionic-team/ionicons/blob/master/CHANGELOG.md" }, "changelog"),
-            " for a list of icon deletions/renames.")));
+            " for a list of icon deletions/renames. You can an archived version of the v4 site ",
+            h("a", { href: "/v4/" }, "here"),
+            ".")));
 }
 function highlight$1(text) {
     return (h("div", { class: "styled-code" },
