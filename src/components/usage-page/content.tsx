@@ -83,7 +83,7 @@ export default function(version: string, name = 'heart', suffix = '') {
 )}
 
 <h2>Migrating from v4</h2>
-<p>See the <a href="https://github.com/ionic-team/ionicons/blob/master/CHANGELOG.md">changelog</a> for a list of icon deletions/renames. You can an archived version of the v4 site <a href="/v4/">here</a>.</p>
+<p>See the <a href="https://github.com/ionic-team/ionicons/blob/master/CHANGELOG.md">changelog</a> for a list of icon deletions/renames. You can find an archived version of the v4 site <a href="/v4/">here</a>.</p>
 
 </div>); }
 
