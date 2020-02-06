@@ -25,6 +25,7 @@ export const config: Config = {
         { src: '../archived/v4/', dest: './v4/' },
         { src: './index.html', dest: './usage/index.html' },
         { src: './test', dest: './test' },
+        { src: './CNAME', dest: './CNAME' },
       ]
     }
   ],
