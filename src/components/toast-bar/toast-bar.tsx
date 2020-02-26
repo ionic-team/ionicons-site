@@ -110,6 +110,7 @@ export class ToastBar {
     if (this.selectedIcon) {
       if (!this.hadIconOnce) this.hadIconOnce = true;
       iconAttrName = this.selectedIcon.name + this.typeSuffix;
+
       snippetLength = (`<ion-icon name="${ iconAttrName }"></ion-icon>`.length * 8) + 32;
     }
 

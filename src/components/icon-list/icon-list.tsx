@@ -110,6 +110,11 @@ export class LandingPage {
         typeSuffix = '';
     }
 
+    // logo icons don't have an icon type variant so clear the typesuffix
+    if (selectedIcon && selectedIcon.name.includes('logo-')) {
+      typeSuffix = '';
+    }
+
     if (!results.icon.length && !results.logo.length && this.isHeaderSearchVisible) document.documentElement!.scrollTop = 0;
 
     return (
