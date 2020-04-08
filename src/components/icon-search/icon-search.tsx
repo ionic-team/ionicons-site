@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Listen, Prop, State, Watch, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, State, Watch, h } from '@stencil/core';
 
 @Component({
   tag: 'icon-search',
@@ -18,15 +18,15 @@ export class IconSearch {
     this.showClearCtrl = (this.query.length > 0) ? true : false;
   }
 
-
-  @Listen('keyup')
-  searchListener(ev: any) {
-    if (ev.keyCode === 27) {
+  handleKeyUp = (e: KeyboardEvent) => {
+    if (e.keyCode === 27) {
       this.handleClear();
       return;
     }
+  }
 
-    const value = (ev.target as HTMLInputElement).value;
+  handleInput = (e: KeyboardEvent) => {
+    const value = (e.target as HTMLInputElement).value;
     this.hasSearched.emit(value);
   }
 
@@ -48,6 +48,8 @@ export class IconSearch {
         <input type="text"
           placeholder="Search icons..."
           value={this.query}
+          onKeyUp={this.handleKeyUp}
+          onInput={this.handleInput}
           autofocus={this.autofocus === 'autofocus' ? 'autofocus' : ''}/>
 
         <i class={{
