@@ -5,6 +5,8 @@ import { Component, Event, EventEmitter, Prop, State, Watch, h } from '@stencil/
   styleUrl: 'icon-search.scss'
 })
 export class IconSearch {
+  searchRef: HTMLInputElement;
+
   @Prop() query = '';
   @Prop() size = 'small';
   @Prop() autofocus = 'none';
@@ -16,6 +18,10 @@ export class IconSearch {
   @Watch('query')
   watchQuery() {
     this.showClearCtrl = (this.query.length > 0) ? true : false;
+  }
+
+  componentDidLoad() {
+    this.searchRef && this.searchRef.focus();
   }
 
   handleKeyUp = (e: KeyboardEvent) => {
@@ -45,7 +51,9 @@ export class IconSearch {
           <svg><use xlinkHref={`#search-outline`}/></svg>
         </i>
 
-        <input type="text"
+        <input
+          ref={e => this.searchRef = e}
+          type="text"
           placeholder="Search icons..."
           value={this.query}
           onKeyUp={this.handleKeyUp}
