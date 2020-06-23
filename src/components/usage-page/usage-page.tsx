@@ -1,5 +1,5 @@
 import { Component, Prop, State, h } from '@stencil/core';
-import { QueueApi } from '@stencil/core/dist/declarations';
+import { QueueApi } from '@stencil/core/internal';
 import { MatchResults } from '@stencil/router';
 import content from './content';
 

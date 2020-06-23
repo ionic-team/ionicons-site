@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop, State, Watch, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, State, Watch, h, Build } from '@stencil/core';
 
 @Component({
   tag: 'icon-search',
@@ -9,7 +9,7 @@ export class IconSearch {
 
   @Prop() query = '';
   @Prop() size = 'small';
-  @Prop() autofocus = 'none';
+  @Prop() autoFocus = 'none';
 
   @State() showClearCtrl = false;
 
@@ -21,7 +21,9 @@ export class IconSearch {
   }
 
   componentDidLoad() {
-    this.searchRef && this.searchRef.focus();
+    if (Build.isBrowser) {
+      this.searchRef && this.searchRef.focus();
+    }
   }
 
   handleKeyUp = (e: KeyboardEvent) => {
@@ -58,7 +60,7 @@ export class IconSearch {
           value={this.query}
           onKeyUp={this.handleKeyUp}
           onInput={this.handleInput}
-          autofocus={this.autofocus === 'autofocus' ? 'autofocus' : ''}/>
+          autofocus={this.autoFocus === 'autofocus' ? 'autofocus' : ''}/>
 
         <i class={{
             'search-input__clear': true,
