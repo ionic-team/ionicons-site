@@ -1,1 +1,1 @@
-import{p as i,b as a}from"./p-03c6fd3b.js";i().then(i=>a([["p-ec0be98a",[[1,"ion-icon",{mode:[1025],color:[1],ariaLabel:[1537,"aria-label"],ios:[1],md:[1],flipRtl:[4,"flip-rtl"],name:[1],src:[1],icon:[8],size:[1],lazy:[4],svgContent:[32],isVisible:[32]}]]]],i));
+import{b as i}from"./p-6f4eae92.js";import{p as a}from"./p-4372c4bc.js";a().then(a=>i([["p-7815a89a",[[1,"ion-icon",{mode:[1025],color:[1],ariaLabel:[1537,"aria-label"],ios:[1],md:[1],flipRtl:[4,"flip-rtl"],name:[1],src:[1],icon:[8],size:[1],lazy:[4],svgContent:[32],isVisible:[32]}]]]],a));

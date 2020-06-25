@@ -1,6 +1,6 @@
 {
   "name": "ionicons",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "icons": [
     {
       "name": "add",
@@ -347,6 +347,7 @@
         "arrow",
         "back",
         "chevron",
+        "left",
         "navigation"
       ]
     },
@@ -357,6 +358,7 @@
         "back",
         "chevron",
         "circle",
+        "left",
         "navigation"
       ]
     },
@@ -367,6 +369,7 @@
         "back",
         "chevron",
         "circle",
+        "left",
         "navigation",
         "outline"
       ]
@@ -387,6 +390,7 @@
       "tags": [
         "arrow",
         "back",
+        "left",
         "outline"
       ]
     },
@@ -396,6 +400,7 @@
         "arrow",
         "back",
         "chevron",
+        "left",
         "navigation",
         "sharp"
       ]
@@ -460,7 +465,8 @@
         "arrow",
         "chevron",
         "forward",
-        "navigation"
+        "navigation",
+        "right"
       ]
     },
     {
@@ -470,7 +476,8 @@
         "chevron",
         "circle",
         "forward",
-        "navigation"
+        "navigation",
+        "right"
       ]
     },
     {
@@ -481,7 +488,8 @@
         "circle",
         "forward",
         "navigation",
-        "outline"
+        "outline",
+        "right"
       ]
     },
     {
@@ -492,6 +500,7 @@
         "circle",
         "forward",
         "navigation",
+        "right",
         "sharp"
       ]
     },
@@ -500,7 +509,8 @@
       "tags": [
         "arrow",
         "forward",
-        "outline"
+        "outline",
+        "right"
       ]
     },
     {
@@ -510,6 +520,7 @@
         "chevron",
         "forward",
         "navigation",
+        "right",
         "sharp"
       ]
     },
@@ -799,21 +810,30 @@
     {
       "name": "barbell",
       "tags": [
-        "barbell"
+        "barbell",
+        "exercise",
+        "lifting",
+        "weight"
       ]
     },
     {
       "name": "barbell-outline",
       "tags": [
         "barbell",
-        "outline"
+        "exercise",
+        "lifting",
+        "outline",
+        "weight"
       ]
     },
     {
       "name": "barbell-sharp",
       "tags": [
         "barbell",
-        "sharp"
+        "exercise",
+        "lifting",
+        "sharp",
+        "weight"
       ]
     },
     {
@@ -1081,13 +1101,17 @@
     {
       "name": "bicycle",
       "tags": [
-        "bicycle"
+        "bicycle",
+        "bike",
+        "exercise"
       ]
     },
     {
       "name": "bicycle-outline",
       "tags": [
         "bicycle",
+        "bike",
+        "exercise",
         "outline"
       ]
     },
@@ -1095,6 +1119,8 @@
       "name": "bicycle-sharp",
       "tags": [
         "bicycle",
+        "bike",
+        "exercise",
         "sharp"
       ]
     },
@@ -1716,6 +1742,7 @@
         "back",
         "caret",
         "circle",
+        "left",
         "sharp"
       ]
     },
@@ -1724,6 +1751,7 @@
       "tags": [
         "back",
         "caret",
+        "left",
         "outline"
       ]
     },
@@ -1732,6 +1760,7 @@
       "tags": [
         "back",
         "caret",
+        "left",
         "sharp"
       ]
     },
@@ -1788,7 +1817,8 @@
       "name": "caret-forward",
       "tags": [
         "caret",
-        "forward"
+        "forward",
+        "right"
       ]
     },
     {
@@ -1796,7 +1826,8 @@
       "tags": [
         "caret",
         "circle",
-        "forward"
+        "forward",
+        "right"
       ]
     },
     {
@@ -1805,7 +1836,8 @@
         "caret",
         "circle",
         "forward",
-        "outline"
+        "outline",
+        "right"
       ]
     },
     {
@@ -1814,6 +1846,7 @@
         "caret",
         "circle",
         "forward",
+        "right",
         "sharp"
       ]
     },
@@ -1822,7 +1855,8 @@
       "tags": [
         "caret",
         "forward",
-        "outline"
+        "outline",
+        "right"
       ]
     },
     {
@@ -1830,6 +1864,7 @@
       "tags": [
         "caret",
         "forward",
+        "right",
         "sharp"
       ]
     },
@@ -2190,7 +2225,8 @@
       "name": "chevron-back",
       "tags": [
         "back",
-        "chevron"
+        "chevron",
+        "left"
       ]
     },
     {
@@ -2198,7 +2234,8 @@
       "tags": [
         "back",
         "chevron",
-        "circle"
+        "circle",
+        "left"
       ]
     },
     {
@@ -2207,6 +2244,7 @@
         "back",
         "chevron",
         "circle",
+        "left",
         "outline"
       ]
     },
@@ -2216,6 +2254,7 @@
         "back",
         "chevron",
         "circle",
+        "left",
         "sharp"
       ]
     },
@@ -2224,6 +2263,7 @@
       "tags": [
         "back",
         "chevron",
+        "left",
         "outline"
       ]
     },
@@ -2232,6 +2272,7 @@
       "tags": [
         "back",
         "chevron",
+        "left",
         "sharp"
       ]
     },
@@ -2288,7 +2329,8 @@
       "name": "chevron-forward",
       "tags": [
         "chevron",
-        "forward"
+        "forward",
+        "right"
       ]
     },
     {
@@ -2296,7 +2338,8 @@
       "tags": [
         "chevron",
         "circle",
-        "forward"
+        "forward",
+        "right"
       ]
     },
     {
@@ -2305,7 +2348,8 @@
         "chevron",
         "circle",
         "forward",
-        "outline"
+        "outline",
+        "right"
       ]
     },
     {
@@ -2314,6 +2358,7 @@
         "chevron",
         "circle",
         "forward",
+        "right",
         "sharp"
       ]
     },
@@ -2322,7 +2367,8 @@
       "tags": [
         "chevron",
         "forward",
-        "outline"
+        "outline",
+        "right"
       ]
     },
     {
@@ -2330,6 +2376,7 @@
       "tags": [
         "chevron",
         "forward",
+        "right",
         "sharp"
       ]
     },
@@ -3702,6 +3749,7 @@
     {
       "name": "female",
       "tags": [
+        "dudette",
         "female",
         "girl",
         "lady",
@@ -3711,6 +3759,7 @@
     {
       "name": "female-outline",
       "tags": [
+        "dudette",
         "female",
         "girl",
         "lady",
@@ -3721,6 +3770,7 @@
     {
       "name": "female-sharp",
       "tags": [
+        "dudette",
         "female",
         "girl",
         "lady",
@@ -7383,6 +7433,7 @@
       "name": "play-back",
       "tags": [
         "back",
+        "left",
         "play"
       ]
     },
@@ -7391,6 +7442,7 @@
       "tags": [
         "back",
         "circle",
+        "left",
         "play"
       ]
     },
@@ -7399,6 +7451,7 @@
       "tags": [
         "back",
         "circle",
+        "left",
         "outline",
         "play"
       ]
@@ -7408,6 +7461,7 @@
       "tags": [
         "back",
         "circle",
+        "left",
         "play",
         "sharp"
       ]
@@ -7416,6 +7470,7 @@
       "name": "play-back-outline",
       "tags": [
         "back",
+        "left",
         "outline",
         "play"
       ]
@@ -7424,6 +7479,7 @@
       "name": "play-back-sharp",
       "tags": [
         "back",
+        "left",
         "play",
         "sharp"
       ]
@@ -7467,7 +7523,8 @@
       "name": "play-forward",
       "tags": [
         "forward",
-        "play"
+        "play",
+        "right"
       ]
     },
     {
@@ -7475,7 +7532,8 @@
       "tags": [
         "circle",
         "forward",
-        "play"
+        "play",
+        "right"
       ]
     },
     {
@@ -7484,7 +7542,8 @@
         "circle",
         "forward",
         "outline",
-        "play"
+        "play",
+        "right"
       ]
     },
     {
@@ -7493,6 +7552,7 @@
         "circle",
         "forward",
         "play",
+        "right",
         "sharp"
       ]
     },
@@ -7501,7 +7561,8 @@
       "tags": [
         "forward",
         "outline",
-        "play"
+        "play",
+        "right"
       ]
     },
     {
@@ -7509,6 +7570,7 @@
       "tags": [
         "forward",
         "play",
+        "right",
         "sharp"
       ]
     },
@@ -7538,6 +7600,7 @@
       "name": "play-skip-back",
       "tags": [
         "back",
+        "left",
         "play",
         "skip"
       ]
@@ -7547,6 +7610,7 @@
       "tags": [
         "back",
         "circle",
+        "left",
         "play",
         "skip"
       ]
@@ -7556,6 +7620,7 @@
       "tags": [
         "back",
         "circle",
+        "left",
         "outline",
         "play",
         "skip"
@@ -7566,6 +7631,7 @@
       "tags": [
         "back",
         "circle",
+        "left",
         "play",
         "sharp",
         "skip"
@@ -7575,6 +7641,7 @@
       "name": "play-skip-back-outline",
       "tags": [
         "back",
+        "left",
         "outline",
         "play",
         "skip"
@@ -7584,6 +7651,7 @@
       "name": "play-skip-back-sharp",
       "tags": [
         "back",
+        "left",
         "play",
         "sharp",
         "skip"
@@ -7603,6 +7671,7 @@
         "circle",
         "forward",
         "play",
+        "right",
         "skip"
       ]
     },
@@ -7613,6 +7682,7 @@
         "forward",
         "outline",
         "play",
+        "right",
         "skip"
       ]
     },
@@ -7622,6 +7692,7 @@
         "circle",
         "forward",
         "play",
+        "right",
         "sharp",
         "skip"
       ]
@@ -7632,6 +7703,7 @@
         "forward",
         "outline",
         "play",
+        "right",
         "skip"
       ]
     },
@@ -7640,6 +7712,7 @@
       "tags": [
         "forward",
         "play",
+        "right",
         "sharp",
         "skip"
       ]
@@ -8338,6 +8411,7 @@
       "tags": [
         "back",
         "down",
+        "left",
         "return"
       ]
     },
@@ -8346,6 +8420,7 @@
       "tags": [
         "back",
         "down",
+        "left",
         "outline",
         "return"
       ]
@@ -8355,6 +8430,7 @@
       "tags": [
         "back",
         "down",
+        "left",
         "return",
         "sharp"
       ]
@@ -8364,7 +8440,8 @@
       "tags": [
         "down",
         "forward",
-        "return"
+        "return",
+        "right"
       ]
     },
     {
@@ -8373,7 +8450,8 @@
         "down",
         "forward",
         "outline",
-        "return"
+        "return",
+        "right"
       ]
     },
     {
@@ -8382,6 +8460,7 @@
         "down",
         "forward",
         "return",
+        "right",
         "sharp"
       ]
     },
@@ -8389,6 +8468,7 @@
       "name": "return-up-back",
       "tags": [
         "back",
+        "left",
         "return",
         "up"
       ]
@@ -8397,6 +8477,7 @@
       "name": "return-up-back-outline",
       "tags": [
         "back",
+        "left",
         "outline",
         "return",
         "up"
@@ -8406,6 +8487,7 @@
       "name": "return-up-back-sharp",
       "tags": [
         "back",
+        "left",
         "return",
         "sharp",
         "up"
@@ -8416,6 +8498,7 @@
       "tags": [
         "forward",
         "return",
+        "right",
         "up"
       ]
     },
@@ -8425,6 +8508,7 @@
         "forward",
         "outline",
         "return",
+        "right",
         "up"
       ]
     },
@@ -8433,6 +8517,7 @@
       "tags": [
         "forward",
         "return",
+        "right",
         "sharp",
         "up"
       ]
