@@ -2,7 +2,6 @@ dist/
 www/
 loader/
 src/index.html
-docs/build/
 
 *~
 *.sw[mnpcod]
