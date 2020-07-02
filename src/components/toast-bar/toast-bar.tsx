@@ -1,4 +1,5 @@
 import { Component, Element, Event, EventEmitter, Prop, State, h } from '@stencil/core';
+import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'toast-bar',
@@ -121,7 +122,7 @@ export class ToastBar {
         class={`toast-bar ${this.selectedIcon ? 'isVisible' : ''} ${!this.selectedIcon && this.hadIconOnce ? 'isHidden' : ''} ${!this.hadIconOnce ? 'preload' : ''}`}
         onClick={ev => ev.stopPropagation()}>
 
-        <div class="container">
+        <ResponsiveContainer>
           <div class="toast-bar--inner">
             {this.selectedIcon && <h4>{iconAttrName}</h4>}
             {this.selectedIcon &&
@@ -182,7 +183,7 @@ export class ToastBar {
               </div>
             }
           </div>
-        </div>
+        </ResponsiveContainer>
 
       </div>
     );

@@ -2,7 +2,7 @@ header-bar {
 
   header {
     transition: border 0.6s;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     left: 0;
@@ -17,7 +17,7 @@ header-bar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 
-  .container,
+  .ui-container,
   .logo,
   .logo a,
   nav {
@@ -48,7 +48,7 @@ header-bar {
     pointer-events: auto;
   }
 
-  .container {
+  .ui-container {
     justify-content: space-between;
     padding-top: 12px;
     padding-bottom: 12px;

@@ -2,6 +2,7 @@ import { Component, Prop, State, h } from '@stencil/core';
 import { QueueApi } from '@stencil/core/internal';
 import { MatchResults } from '@stencil/router';
 import content from './content';
+import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 
 @Component({
@@ -61,11 +62,11 @@ export class UsagePage {
    return (
      <main>
        <div class="wrapper">
-         <div class="container">
+         <ResponsiveContainer>
            <div class="content">
              { content(this.data.version, this.exampleName, this.exampleSuffix) }
            </div>
-         </div>
+         </ResponsiveContainer>
        </div>
 
        <footer-bar></footer-bar>

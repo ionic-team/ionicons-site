@@ -1,4 +1,5 @@
 import { Component, Element, Event, EventEmitter, Listen, Prop, State, h } from '@stencil/core';
+import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'header-bar',
@@ -68,8 +69,7 @@ export class HeaderBar {
   render() {
     return (
       <header class={`${this.isSearchVisible ? 'visible-search' : ''} ${this.isSticky ? 'overlay' : ''}`}>
-
-        <div class="container">
+        <ResponsiveContainer>
           <div class="logo">
             <stencil-route-link url="/" exact={true}>
               <svg width="32px" height="32px" viewBox="0 0 32 32">
@@ -132,7 +132,7 @@ export class HeaderBar {
           </a>
 
           <span class="more" onClick={this.showNav.bind(this)}><i class="ion ion-md-more"></i></span>
-        </div>
+        </ResponsiveContainer>
 
       </header>
     );

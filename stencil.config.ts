@@ -14,6 +14,7 @@ export const config: Config = {
       baseUrl: 'https://ionicons.com/',
       prerenderConfig: 'prerender.config.js',
       copy: [
+        { src: '../node_modules/@ionic-internal/sites-shared/www/assets/fonts', dest: 'assets/fonts' },
         { src: '../node_modules/ionicons/dist/ionicons/', dest: './ionicons/' },
         { src: '../node_modules/ionicons/dist/ionicons.js', dest: './ionicons.js' },
         { src: '../node_modules/ionicons/dist/cheatsheet.html', dest: './cheatsheet.html' },
