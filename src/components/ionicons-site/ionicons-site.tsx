@@ -104,12 +104,14 @@ export class IoniconsSite {
   }
 
   render() {
-    return [
-      // <announcement-bar></announcement-bar>,
+    return (
+    <site-root>
+      <site-platform-bar productName="Ionicons"></site-platform-bar>
+      {/* <announcement-bar></announcement-bar> */}
       <header-bar
         version={this.data.version}
         query={this.query}
-        isSearchVisible={this.isHeaderSearchVisible}></header-bar>,
+        isSearchVisible={this.isHeaderSearchVisible}></header-bar>
 
       <stencil-router>
         <stencil-router-scroll-top>
@@ -129,6 +131,7 @@ export class IoniconsSite {
           </stencil-route-switch>
         </stencil-router-scroll-top>
       </stencil-router>
-    ];
+    </site-root>
+    )
   }
 }

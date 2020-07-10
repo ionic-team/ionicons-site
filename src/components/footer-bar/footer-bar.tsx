@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'footer-bar',
@@ -8,7 +9,7 @@ export class FooterBar {
   render() {
     return(
       <footer>
-        <div class="container">
+        <ResponsiveContainer>
           <div class="footer__open-source">
             <a href="http://ionicframework.com/"
               title="IonicFramework.com"
@@ -30,7 +31,7 @@ export class FooterBar {
             <a href="/v4/">v4</a>
             <a href="https://ionicframework.com/">Ionic Framework</a>
           </div>
-        </div>
+        </ResponsiveContainer>
       </footer>
     );
   }

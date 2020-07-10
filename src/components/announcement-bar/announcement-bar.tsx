@@ -1,6 +1,7 @@
 import { Component, State, h } from '@stencil/core';
 import Prismic from 'prismic-javascript';
 import PrismicDOM from 'prismic-dom';
+import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'announcement-bar',
@@ -30,11 +31,11 @@ export class AnnouncementBar {
 
     return (
       <nav class={this.data.theme === 'Studio' ? 'announcement-bar--studio' : ''}>
-        <div class="container">
+        <ResponsiveContainer>
           <div innerHTML={PrismicDOM.RichText.asHtml(this.data.text)}></div>
           <a href={this.data.link.url}
              target="_blank">{this.data.button_text}</a>
-        </div>
+        </ResponsiveContainer>
       </nav>
     )
   }
