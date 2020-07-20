@@ -13,7 +13,7 @@ export default function(version: string, name = 'heart', suffix = '') {
 <p class="lead">Ionicons is a completely open-source icon set with 1,200+ icons crafted for web, iOS, Android, and desktop apps. Ionicons was made for <a href="https://ionicframework.com/">Ionic Framework</a>, a cross-platform hybrid and Progressive Web App framework.</p>
 
 <h2>Using the Web Component</h2>
-<p>The Iconicons Web Component is an easy and performant way to use Ionicons in your app. The component will dynamically load an SVG for each icon, so your app is only requesting the icons that you need.</p>
+<p>The Ionicons Web Component is an easy and performant way to use Ionicons in your app. The component will dynamically load an SVG for each icon, so your app is only requesting the icons that you need.</p>
 
 <p>Also note that only visible icons are loaded, and icons which are "below the fold" and hidden from the user's view do not make fetch requests for the svg resource.</p>
 
