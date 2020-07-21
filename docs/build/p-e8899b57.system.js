@@ -1,1 +1,0 @@
-System.register(["./p-a41addb1.system.js","./p-4ffbfde7.system.js"],(function(t){"use strict";var s,e;return{setters:[function(t){s=t.h},function(t){e=t.a}],execute:function(){var n=t("B",(function(t,n){return s("button",Object.assign({},e(t,{class:"ui-button"})),n)}))}}}));
