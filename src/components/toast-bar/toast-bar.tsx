@@ -72,10 +72,10 @@ export class ToastBar {
     }
   }
 
-  handleSVGDownload(ev, name) {
+  handleSVGDownload(ev: UIEvent, name) {
     ev.preventDefault();
     this.isSVGDownloading = true;
-    fetch(ev.target.href)
+    fetch((ev.currentTarget as HTMLAnchorElement).href)
       .then(response => {
         if (response.ok) {
           return response.text()
