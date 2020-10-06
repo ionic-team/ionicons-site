@@ -79,9 +79,9 @@ export class ToastBar {
       .then(response => {
         if (response.ok) {
           return response.text()
-        } else {
-          throw new Error('Unable to fetch icon.');
         }
+        this.isSVGDownloading = false;
+        throw new Error('Unable to fetch icon.');
       })
       .then((svg) => {
         this.isSVGDownloading = false;
