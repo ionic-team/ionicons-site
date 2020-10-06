@@ -16,6 +16,7 @@ export const config: Config = {
       copy: [
         { src: '../node_modules/@ionic-internal/sites-shared/www/assets/fonts', dest: 'assets/fonts' },
         { src: '../node_modules/ionicons/dist/ionicons/', dest: './ionicons/' },
+        { src: '../node_modules/ionicons/dist/svg/', dest: './svg/' },
         { src: '../node_modules/ionicons/dist/ionicons.js', dest: './ionicons.js' },
         { src: '../node_modules/ionicons/dist/cheatsheet.html', dest: './cheatsheet.html' },
         { src: '../node_modules/ionicons/dist/ionicons.json', dest: './ionicons.json' },
