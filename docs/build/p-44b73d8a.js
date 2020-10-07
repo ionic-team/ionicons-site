@@ -1,0 +1,1 @@
+import{h as t}from"./p-7ed6835f.js";import{a as o}from"./p-ea521598.js";const s=(s,a)=>t("button",Object.assign({},o(s,{class:"ui-button"})),a);export{s as B}
