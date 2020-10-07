@@ -11,7 +11,7 @@ export default function (version: string, name = "heart", suffix = "") {
     <div>
       <h1>Usage</h1>
       <p class="lead">
-        Ionicons is a completely open-source icon set with 1,200+ icons crafted
+        Ionicons is a completely open-source icon set with 1,300 icons crafted
         for web, iOS, Android, and desktop apps. Ionicons was made for{" "}
         <a href="https://ionicframework.com/">Ionic Framework</a>, a
         cross-platform hybrid and Progressive Web App framework.
