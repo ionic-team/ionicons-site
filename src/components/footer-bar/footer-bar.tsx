@@ -34,6 +34,13 @@ export class FooterBar {
             <a href={cheatsheetUrl} target="_blank" rel="noopener noreferrer">
               Cheatsheet
             </a>
+            <a
+              href="https://github.com/ionic-team/ionicons/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Release Notes
+            </a>
             <a href="/v1">v1</a>
             <a href="/v2">v2</a>
             <a href="https://ionicframework.com/docs/v3/ionicons/">v3</a>
