@@ -10,6 +10,7 @@ export namespace Components {
     interface AnnouncementBar {
     }
     interface FooterBar {
+        "version": string;
     }
     interface HeaderBar {
         "isSearchVisible": boolean;
@@ -126,6 +127,7 @@ declare namespace LocalJSX {
     interface AnnouncementBar {
     }
     interface FooterBar {
+        "version"?: string;
     }
     interface HeaderBar {
         "isSearchVisible"?: boolean;
