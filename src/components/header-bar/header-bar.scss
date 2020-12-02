@@ -1,14 +1,15 @@
 header-bar {
+  display: block;
+    position: sticky;
+    z-index: 999;
+    top: 0;
 
   header {
     transition: border 0.6s;
-    position: sticky;
     width: 100%;
-    top: 0;
     left: 0;
     right: 0;
     background: #fff;
-    z-index: 999;
     border-bottom: 1px solid transparent;
     height: 64px;
   }
