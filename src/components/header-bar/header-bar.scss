@@ -1,10 +1,13 @@
 header-bar {
+  display: block;
+  position: sticky;
+  top: 0;
 
   header {
     transition: border 0.6s;
-    position: sticky;
+    
     width: 100%;
-    top: 0;
+    
     left: 0;
     right: 0;
     background: #fff;
