@@ -3,7 +3,7 @@
   --color-shark: #272a2f;
   --color-oslo-gray: #868b95;
   --color-pale-sky: #697384;
-  --color-melrose: #AEC6FF;
+  --color-melrose: #aec6ff;
   --color-melrose-dark: #4c5873;
   --color-gull-gray: #a1aab8;
   --color-bright-gray: #363e49;
@@ -11,7 +11,7 @@
   --color-heather: #bec7d5;
   --color-catskill-white: #ecf0f6;
   --color-dodger-blue: #3880ff;
-  --color-dodger-blue-light: #5A96FF;
+  --color-dodger-blue-light: #5a96ff;
   --color-periwinkle: #c6dbff;
   --color-cadet-blue: #abb2bf;
   --color-white-lilac: #f8f8fc;
@@ -39,7 +39,7 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  padding-top: 110px;
+  padding-top: 96px;
   box-sizing: border-box;
 }
 
@@ -81,8 +81,8 @@ stencil-router-scroll-top > div {
 
 h1 {
   font-family: var(--f-family-display);
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 48px;
+  line-height: 54px;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--color-mirage);
@@ -147,9 +147,8 @@ p.lead {
   font-weight: 400;
 }
 
-
 .btn {
-  transition: .3s box-shadow,.3s background;
+  transition: 0.3s box-shadow, 0.3s background;
   background-color: var(--color-catskill-white);
   color: var(--color-pale-sky);
   font-size: 13px;
@@ -192,7 +191,6 @@ p.lead {
   height: 14px;
   margin-right: 4px;
 }
-
 
 .btn--icon {
   width: 36px;
@@ -244,7 +242,6 @@ p.lead {
     padding-right: 15px;
   }
 }
-
 
 .hljs-comment,
 .hljs-quote {
@@ -330,7 +327,7 @@ p.lead {
 
 code,
 pre {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 code {
@@ -389,7 +386,6 @@ pre {
   transform: translate(0, 1px);
 }
 
-
 .loading-animation {
   animation-name: spin;
   animation-duration: 1000ms;
@@ -401,7 +397,8 @@ pre {
 @keyframes spin {
   from {
     transform: rotate(0deg);
-  } to {
+  }
+  to {
     transform: rotate(360deg);
   }
 }
