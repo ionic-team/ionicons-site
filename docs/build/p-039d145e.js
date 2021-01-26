@@ -1,0 +1,1 @@
+import{h as o}from"./p-7ed6835f.js";import{a as s}from"./p-9367f088.js";const r=(r,t)=>o("div",Object.assign({},s(r,{class:"ui-container"})),t);export{r as R}
