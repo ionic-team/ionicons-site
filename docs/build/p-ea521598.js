@@ -1,1 +1,0 @@
-const t=(t,e={})=>{const c=new Set(Object.keys(t).concat(Object.keys(e)));return Array.from(c).reduce((c,n)=>(n in e?c[n]="class"===n?"string"==typeof e[n]?`${e[n]} ${t[n]?t[n]:""}`:Object.assign(Object.assign({},t[n]),e[n]):e[n]:n in t&&(c[n]=t[n]),c),{})};export{t as a}
