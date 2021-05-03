@@ -71,7 +71,7 @@ export class HeaderBar {
       <header class={`${this.isSearchVisible ? 'visible-search' : ''} ${this.isSticky ? 'overlay' : ''}`}>
         <ResponsiveContainer>
           <div class="logo">
-            <stencil-route-link url="/" exact={true}>
+            <stencil-route-link url="/ionicons" exact={true}>
               <svg width="117" height="32" viewBox="0 0 117 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M42.2832 11.6686C43.3555 11.6686 44.1276 10.9177 44.1276 9.84502C44.1276 8.77233 43.3555 8 42.2832 8C41.2108 8 40.4387 8.77233 40.4387 9.84502C40.4387 10.9177 41.2108 11.6686 42.2832 11.6686ZM40.7604 23.7427H43.8059V12.5009H40.7604V23.7427Z" fill="#03060B" />
                 <path d="M60.2522 12.5009H57.4427V23.7427H60.4882V17.3065C60.4882 15.8048 61.3031 14.8608 62.783 14.8608C64.1341 14.8608 64.6918 15.7619 64.6918 17.0705V23.7427H67.7372V16.7273C67.7372 14.0456 66.3003 12.2435 63.598 12.2435C61.9251 12.2435 60.767 12.9085 60.2522 13.8739V12.5009Z" fill="#03060B" />
@@ -96,7 +96,7 @@ export class HeaderBar {
           <nav>
             <stencil-route-link
               class="nav__item"
-              url="/"
+              url="/ionicons"
               exact={true}
               onClick={this.hideNav.bind(this)}>
               Icons
@@ -104,7 +104,7 @@ export class HeaderBar {
 
             <stencil-route-link
               class="nav__item"
-              url="/usage"
+              url="/ionicons/usage"
               onClick={() => {
                 this.toggleHeaderSearch.emit('hide');
                 this.hideNav();
@@ -124,7 +124,7 @@ export class HeaderBar {
             <span class="close" onClick={this.hideNav.bind(this)}><i class="ion ion-md-close"></i></span>
           </nav>
 
-          <a class="btn sm-hide download-link" href="/ionicons.designerpack.zip" download={`ionicons-${this.version}.designerpack.zip`}>
+          <a class="btn sm-hide download-link" href="/ionicons/ionicons.designerpack.zip" download={`ionicons-${this.version}.designerpack.zip`}>
             <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <rect id="bg" fill="#BAC3D1" x="0" y="9" width="9" height="2" rx="1"></rect>

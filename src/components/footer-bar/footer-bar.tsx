@@ -20,7 +20,7 @@ export class FooterBar {
               rel="noopener"
             >
               <img
-                src="/assets/img/ionic-os-logo.png"
+                src="/ionicons/assets/img/ionic-os-logo.png"
                 alt="Ionic Open Source Logo"
               />
             </a>
@@ -41,10 +41,10 @@ export class FooterBar {
             >
               Release Notes
             </a>
-            <a href="/v1">v1</a>
-            <a href="/v2">v2</a>
+            <a href="/ionicons/v1">v1</a>
+            <a href="/ionicons/v2">v2</a>
             <a href="https://ionicframework.com/docs/v3/ionicons/">v3</a>
-            <a href="/v4/">v4</a>
+            <a href="/ionicons/v4">v4</a>
             <a href="https://ionicframework.com/">Ionic Framework</a>
           </div>
         </ResponsiveContainer>

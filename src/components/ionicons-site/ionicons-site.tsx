@@ -45,7 +45,7 @@ export class IoniconsSite {
   }
 
   async loadData() {
-    const res = await fetch('/ionicons.json');
+    const res = await fetch('/ionicons/ionicons.json');
     const json = await res.json();
 
     this.data = json;
@@ -116,15 +116,14 @@ export class IoniconsSite {
       <stencil-router>
         <stencil-router-scroll-top>
           <stencil-route-switch scrollTopOffset={0}>
-            <stencil-route url="/"
-              component="landing-page"
-              exact={true}
-              componentProps={{ 'query': this.query, 'data': this.data }}>
-
-            </stencil-route>
-            <stencil-route url="/usage"
+            <stencil-route url="/ionicons/usage"
               component="usage-page"
               componentProps={{ 'data': this.data }}>
+
+            </stencil-route>
+            <stencil-route url="/ionicons"
+              component="landing-page"
+              componentProps={{ 'query': this.query, 'data': this.data }}>
 
             </stencil-route>
             <stencil-route component="notfound-page"></stencil-route>

@@ -7,14 +7,13 @@ export const config: Config = {
   outputTargets: [
     {
       type: "www",
-      dir: "docs",
       serviceWorker: null,
-      baseUrl: "https://ionicons.com/",
+      baseUrl: "https://ionic.io/ionicons",
       prerenderConfig: "prerender.config.js",
       copy: [
         {
           src: "../node_modules/@ionic-internal/sites-shared/www/assets/fonts",
-          dest: "assets/fonts",
+          dest: "../assets/fonts",
         },
         { src: "../node_modules/ionicons/dist/ionicons/", dest: "./ionicons/" },
         {
