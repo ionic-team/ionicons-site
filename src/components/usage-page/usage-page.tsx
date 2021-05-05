@@ -9,7 +9,7 @@ import { ResponsiveContainer } from "@ionic-internal/ionic-ds";
   styleUrl: "usage-page.scss",
 })
 export class UsagePage {
-  @Prop({ context: "queue" }) queue!: QueueApi;
+  @Prop() queue!: QueueApi;
 
   @State() exampleName = "heart";
   @State() exampleSuffix = "";

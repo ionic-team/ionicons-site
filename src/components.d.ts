@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { QueueApi } from "@stencil/core/internal";
 import { MatchResults } from "@stencil/router";
 export namespace Components {
     interface AnnouncementBar {
@@ -47,6 +48,7 @@ export namespace Components {
     interface UsagePage {
         "data": any;
         "match"?: MatchResults;
+        "queue": QueueApi;
     }
 }
 declare global {
@@ -168,6 +170,7 @@ declare namespace LocalJSX {
     interface UsagePage {
         "data"?: any;
         "match"?: MatchResults;
+        "queue": QueueApi;
     }
     interface IntrinsicElements {
         "announcement-bar": AnnouncementBar;
