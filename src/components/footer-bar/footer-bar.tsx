@@ -1,5 +1,5 @@
 import { Component, h, Prop } from "@stencil/core";
-import { ResponsiveContainer } from "@ionic-internal/sites-shared";
+import { ResponsiveContainer } from "@ionic-internal/ionic-ds";
 
 @Component({
   tag: "footer-bar",

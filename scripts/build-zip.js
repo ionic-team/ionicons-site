@@ -3,7 +3,7 @@ var path = require('path');
 var archiver = require('archiver');
 
 var svgsDir = path.join(__dirname, '..', 'node_modules', 'ionicons', 'dist', 'svg');
-var distzipDir = path.join(__dirname, '..', 'docs');
+var distzipDir = path.join(__dirname, '..', 'www', 'ionicons');
 var distzipFile = path.join(distzipDir, 'ionicons.designerpack.zip');
 
 console.log('designerpack source:', svgsDir);

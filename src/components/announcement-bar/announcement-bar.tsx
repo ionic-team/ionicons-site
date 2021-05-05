@@ -1,7 +1,7 @@
 import { Component, State, h } from '@stencil/core';
 import Prismic from 'prismic-javascript';
 import PrismicDOM from 'prismic-dom';
-import { ResponsiveContainer } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer } from '@ionic-internal/ionic-ds';
 
 @Component({
   tag: 'announcement-bar',

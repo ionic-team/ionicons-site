@@ -106,7 +106,7 @@ export class IoniconsSite {
   render() {
     return (
     <site-root>
-      <site-platform-bar productName="Ionicons"></site-platform-bar>
+      <platform-bar productName="Ionicons"></platform-bar>
       {/* <announcement-bar></announcement-bar> */}
       <header-bar
         version={this.data.version}

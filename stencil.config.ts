@@ -12,8 +12,8 @@ export const config: Config = {
       prerenderConfig: "prerender.config.js",
       copy: [
         {
-          src: "../node_modules/@ionic-internal/sites-shared/www/assets/fonts",
-          dest: "../assets/fonts",
+          src: "../node_modules/@ionic-internal/ionic-ds/www/assets/fonts",
+          dest: "../fonts",
         },
         { src: "../node_modules/ionicons/dist/ionicons/", dest: "./ionicons/" },
         {
@@ -38,5 +38,5 @@ export const config: Config = {
       ],
     },
   ],
-  globalStyle: "src/global/style.css",
+  globalStyle: "src/global/style.scss",
 };

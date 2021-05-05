@@ -1,5 +1,5 @@
 import { Component, Element, Event, EventEmitter, Prop, State, h } from '@stencil/core';
-import { ResponsiveContainer } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer } from '@ionic-internal/ionic-ds';
 
 @Component({
   tag: 'toast-bar',

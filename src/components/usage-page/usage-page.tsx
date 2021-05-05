@@ -2,7 +2,7 @@ import { Component, Prop, State, h } from "@stencil/core";
 import { QueueApi } from "@stencil/core/internal";
 import { MatchResults } from "@stencil/router";
 import content from "./content";
-import { ResponsiveContainer } from "@ionic-internal/sites-shared";
+import { ResponsiveContainer } from "@ionic-internal/ionic-ds";
 
 @Component({
   tag: "usage-page",
