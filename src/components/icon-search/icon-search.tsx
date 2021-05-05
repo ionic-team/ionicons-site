@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop, State, Watch, h, Build } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, State, Watch, h, Build } from '@stencil/core';
 
 @Component({
   tag: 'icon-search',
@@ -9,7 +9,8 @@ export class IconSearch {
 
   @Prop() query = '';
   @Prop() size = 'small';
-  @Prop() autoFocus = 'none';
+  @Prop() autoFocus: 'none' | 'autofocus' | 'if-visible' = 'none';
+  @Element() el: HTMLElement;
 
   @State() showClearCtrl = false;
 
@@ -22,7 +23,15 @@ export class IconSearch {
 
   componentDidLoad() {
     if (Build.isBrowser) {
-      this.searchRef && this.searchRef.focus();
+      const rect = this.el.getBoundingClientRect();
+      const visible = rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+      if ( 
+        (this.autoFocus === 'if-visible' && visible) ||
+        this.autoFocus === 'autofocus'
+      ) {
+        requestAnimationFrame(() => this.searchRef && this.searchRef.focus());
+      }
+
     }
   }
 

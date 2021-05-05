@@ -23,7 +23,7 @@ export namespace Components {
         "query": string;
     }
     interface IconSearch {
-        "autoFocus": string;
+        "autoFocus": 'none' | 'autofocus' | 'if-visible';
         "query": string;
         "size": string;
     }
@@ -142,7 +142,7 @@ declare namespace LocalJSX {
         "query"?: string;
     }
     interface IconSearch {
-        "autoFocus"?: string;
+        "autoFocus"?: 'none' | 'autofocus' | 'if-visible';
         "onHasSearched"?: (event: CustomEvent<any>) => void;
         "query"?: string;
         "size"?: string;

@@ -116,7 +116,7 @@ export class LandingPage {
       <div class="icon-list">
 
         <div class="icon-list__search container--small">
-          <icon-search query={this.query} size="large" autoFocus="autofocus"></icon-search>
+          <icon-search query={this.query} size="large" autoFocus={'if-visible'}></icon-search>
         </div>
 
           {results.icon.length ?
