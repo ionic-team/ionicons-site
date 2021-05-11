@@ -8,7 +8,7 @@ export const config: Config = {
     {
       type: "www",
       serviceWorker: null,
-      baseUrl: "https://ionic.io/ionicons",
+      baseUrl: "https://ionic.io/ionicons/",
       prerenderConfig: "prerender.config.js",
       copy: [
         {
