@@ -50,6 +50,8 @@ export namespace Components {
         "match"?: MatchResults;
         "queue": QueueApi;
     }
+    interface XAnnouncementBar {
+    }
 }
 declare global {
     interface HTMLAnnouncementBarElement extends Components.AnnouncementBar, HTMLStencilElement {
@@ -112,6 +114,12 @@ declare global {
         prototype: HTMLUsagePageElement;
         new (): HTMLUsagePageElement;
     };
+    interface HTMLXAnnouncementBarElement extends Components.XAnnouncementBar, HTMLStencilElement {
+    }
+    var HTMLXAnnouncementBarElement: {
+        prototype: HTMLXAnnouncementBarElement;
+        new (): HTMLXAnnouncementBarElement;
+    };
     interface HTMLElementTagNameMap {
         "announcement-bar": HTMLAnnouncementBarElement;
         "footer-bar": HTMLFooterBarElement;
@@ -123,6 +131,7 @@ declare global {
         "notfound-page": HTMLNotfoundPageElement;
         "toast-bar": HTMLToastBarElement;
         "usage-page": HTMLUsagePageElement;
+        "x-announcement-bar": HTMLXAnnouncementBarElement;
     }
 }
 declare namespace LocalJSX {
@@ -172,6 +181,8 @@ declare namespace LocalJSX {
         "match"?: MatchResults;
         "queue": QueueApi;
     }
+    interface XAnnouncementBar {
+    }
     interface IntrinsicElements {
         "announcement-bar": AnnouncementBar;
         "footer-bar": FooterBar;
@@ -183,6 +194,7 @@ declare namespace LocalJSX {
         "notfound-page": NotfoundPage;
         "toast-bar": ToastBar;
         "usage-page": UsagePage;
+        "x-announcement-bar": XAnnouncementBar;
     }
 }
 export { LocalJSX as JSX };
@@ -199,6 +211,7 @@ declare module "@stencil/core" {
             "notfound-page": LocalJSX.NotfoundPage & JSXBase.HTMLAttributes<HTMLNotfoundPageElement>;
             "toast-bar": LocalJSX.ToastBar & JSXBase.HTMLAttributes<HTMLToastBarElement>;
             "usage-page": LocalJSX.UsagePage & JSXBase.HTMLAttributes<HTMLUsagePageElement>;
+            "x-announcement-bar": LocalJSX.XAnnouncementBar & JSXBase.HTMLAttributes<HTMLXAnnouncementBarElement>;
         }
     }
 }

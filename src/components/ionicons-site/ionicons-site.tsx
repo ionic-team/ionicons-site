@@ -1,5 +1,5 @@
-import { Component, Listen, State, h } from '@stencil/core';
-import '@stencil/router';
+import { Component, Listen, State, h } from "@stencil/core";
+import "@stencil/router";
 
 interface IconData {
   name: string;
@@ -13,31 +13,30 @@ interface AppData {
 }
 
 @Component({
-  tag: 'ionicons-site',
-  styleUrl: 'ionicons-site.scss'
+  tag: "ionicons-site",
+  styleUrl: "ionicons-site.scss",
 })
 export class IoniconsSite {
-
   @State() data: AppData = {
     version: undefined,
-    icons: []
+    icons: [],
   };
-  @State() query = '';
+  @State() query = "";
   @State() isHeaderSearchVisible = false;
 
-  @Listen('scroll', { target: 'window' })
+  @Listen("scroll", { target: "window" })
   handleScroll() {
     requestAnimationFrame(this.checkScroll.bind(this));
   }
 
-  @Listen('hasSearched')
+  @Listen("hasSearched")
   searchHandler(event: CustomEvent) {
     this.query = event.detail;
   }
 
-  @Listen('toggleHeaderSearch')
+  @Listen("toggleHeaderSearch")
   toggleHandler(event: CustomEvent) {
-    this.isHeaderSearchVisible = (event.detail === 'show') ? true : false;
+    this.isHeaderSearchVisible = event.detail === "show" ? true : false;
   }
 
   componentWillLoad() {
@@ -45,54 +44,59 @@ export class IoniconsSite {
   }
 
   async loadData() {
-    const res = await fetch('/ionicons/ionicons.json');
+    const res = await fetch("/ionicons/ionicons.json");
     const json = await res.json();
 
     this.data = json;
 
     let dat = [];
     json.icons.forEach((icon) => {
-      if (!icon.name.includes('-outline') && !icon.name.includes('-sharp') && !dat.find((o) => o.name === icon.name)) {
+      if (
+        !icon.name.includes("-outline") &&
+        !icon.name.includes("-sharp") &&
+        !dat.find((o) => o.name === icon.name)
+      ) {
         dat.push({
           name: icon.name,
           icons: [icon.name],
-          tags: icon.tags
+          tags: icon.tags,
         });
       }
     });
 
-    insertVariants('-outline');
-    insertVariants('-sharp');
+    insertVariants("-outline");
+    insertVariants("-sharp");
     function insertVariants(variantSuffix) {
       json.icons.forEach((icon) => {
-        if (icon.name.includes('logo-')) return;
+        if (icon.name.includes("logo-")) return;
         if (icon.name.includes(variantSuffix)) {
-          const baseName = icon.name.replace(variantSuffix, '');
-          const datIndex = dat.findIndex((icon => icon.name === baseName));
+          const baseName = icon.name.replace(variantSuffix, "");
+          const datIndex = dat.findIndex((icon) => icon.name === baseName);
           if (datIndex < 0) return;
-          dat[datIndex].icons.push(icon.name)
+          dat[datIndex].icons.push(icon.name);
         }
       });
     }
 
     this.data.icons = dat;
-
-
   }
 
   checkScroll() {
     // show/hide header searchbar
-    const headerSearchEl = document.querySelector('header .search-input');
-    const bodySearchEl = document.querySelector('icon-list .search-input');
+    const headerSearchEl = document.querySelector("header .search-input");
+    const bodySearchEl = document.querySelector("icon-list .search-input");
 
     if (!bodySearchEl || !headerSearchEl) {
       return;
     }
 
-    const headerInput = headerSearchEl.querySelector('input')!;
-    const bodyInput = bodySearchEl.querySelector('input')!;
+    const headerInput = headerSearchEl.querySelector("input")!;
+    const bodyInput = bodySearchEl.querySelector("input")!;
 
-    if (bodySearchEl.getBoundingClientRect().top < (bodySearchEl.scrollHeight / 2)) {
+    if (
+      bodySearchEl.getBoundingClientRect().top <
+      bodySearchEl.scrollHeight / 2
+    ) {
       if (this.isHeaderSearchVisible) return;
       this.isHeaderSearchVisible = true;
       if (bodyInput === document.activeElement) headerInput.focus();
@@ -105,32 +109,33 @@ export class IoniconsSite {
 
   render() {
     return (
-    <site-root>
-      <platform-bar productName="Ionicons"></platform-bar>
-      {/* <announcement-bar></announcement-bar> */}
-      <header-bar
-        version={this.data.version}
-        query={this.query}
-        isSearchVisible={this.isHeaderSearchVisible}></header-bar>
+      <site-root>
+        <platform-bar productName="Ionicons"></platform-bar>
+        <announcement-bar></announcement-bar>
+        <header-bar
+          version={this.data.version}
+          query={this.query}
+          isSearchVisible={this.isHeaderSearchVisible}
+        ></header-bar>
 
-      <stencil-router>
-        <stencil-router-scroll-top>
-          <stencil-route-switch scrollTopOffset={0}>
-            <stencil-route url="/ionicons/usage"
-              component="usage-page"
-              componentProps={{ 'data': this.data }}>
-
-            </stencil-route>
-            <stencil-route url="/ionicons"
-              component="landing-page"
-              componentProps={{ 'query': this.query, 'data': this.data }}>
-
-            </stencil-route>
-            <stencil-route component="notfound-page"></stencil-route>
-          </stencil-route-switch>
-        </stencil-router-scroll-top>
-      </stencil-router>
-    </site-root>
-    )
+        <stencil-router>
+          <stencil-router-scroll-top>
+            <stencil-route-switch scrollTopOffset={0}>
+              <stencil-route
+                url="/ionicons/usage"
+                component="usage-page"
+                componentProps={{ data: this.data }}
+              ></stencil-route>
+              <stencil-route
+                url="/ionicons"
+                component="landing-page"
+                componentProps={{ query: this.query, data: this.data }}
+              ></stencil-route>
+              <stencil-route component="notfound-page"></stencil-route>
+            </stencil-route-switch>
+          </stencil-router-scroll-top>
+        </stencil-router>
+      </site-root>
+    );
   }
 }
