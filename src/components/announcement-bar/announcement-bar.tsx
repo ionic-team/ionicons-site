@@ -29,12 +29,13 @@ export class AnnouncementBar {
     if (!this.data || Object.keys(this.data).length === 0) return;
 
     const theme = slugify(this.data.theme);
+    const assetPath = `/ionicons/assets/img/components/announcement-bar/bg-${theme}.png`;
 
     return (
       <a href={this.data.link.url} target="_blank" class="wrapper">
         <nav
           style={{
-            "--asset-path": `url('assets/img/components/announcement-bar/bg-${theme}.png')`,
+            "--asset-path": `url('${assetPath}')`,
           }}
           class={`announcement-bar announcement-bar--${theme}`}
         >
