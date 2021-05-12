@@ -1,30 +1,69 @@
-var fs = require('fs-extra');
-var path = require('path');
-var archiver = require('archiver');
+const fs = require('fs-extra');
+const path = require('path');
+const archiver = require('archiver');
+const https = require('https');
+const os = require('os');
+const AdmZip = require('adm-zip');
 
-var svgsDir = path.join(__dirname, '..', 'node_modules', 'ionicons', 'dist', 'svg');
-var distzipDir = path.join(__dirname, '..', 'www', 'ionicons');
-var distzipFile = path.join(distzipDir, 'ionicons.designerpack.zip');
 
-console.log('designerpack source:', svgsDir);
+const optimizedWebSvgsDir = path.join(__dirname, '..', 'node_modules', 'ionicons', 'dist', 'svg');
 
-const svgCount = fs.readdirSync(svgsDir).length;
+const distZipDir = path.join(__dirname, '..', 'www', 'ionicons');
+const distDesignerPackFile = path.join(distZipDir, 'ionicons.designerpack.zip');
+const distOptimizedWebFile = path.join(distZipDir, 'ionicons.weboptimized.zip');
 
-console.log('Total svg files to zip:', svgCount);
-fs.ensureDirSync(distzipDir);
+console.log(`weboptimized source: ${optimizedWebSvgsDir}`);
 
-var archive = archiver('zip', {
+fs.ensureDirSync(distZipDir);
+
+const webOptimizeArchive = archiver('zip', {
   zlib: { level: 9 }
 });
 
-var output = fs.createWriteStream(distzipFile);
+const output = fs.createWriteStream(distOptimizedWebFile);
 output.on('close', () => {
-  console.log('designerpack created:', distzipFile);
+  const svgCount = fs.readdirSync(optimizedWebSvgsDir).length;  
+  console.log(`weboptimized created: ${distOptimizedWebFile}, files: ${svgCount}`);
 });
 
-archive.pipe(output);
-archive.directory(svgsDir, false);
-archive.on('error', (err) => {
+webOptimizeArchive.pipe(output);
+webOptimizeArchive.directory(optimizedWebSvgsDir, false);
+webOptimizeArchive.on('error', (err) => {
   throw err;
 });
-archive.finalize();
+webOptimizeArchive.finalize();
+
+const masterZipUrl = 'https://codeload.github.com/ionic-team/ionicons/zip/refs/heads/master';
+const tmpDownloadZip = path.join(os.tmpdir(), `ionicons.zip`);
+
+console.log(`download ${masterZipUrl} to ${path.dirname(tmpDownloadZip)}`);
+
+const stream = fs.createWriteStream(tmpDownloadZip);
+https.get(masterZipUrl, (rsp) => rsp.pipe(stream));
+stream.on('finish', zipDesignerPack);
+
+function zipDesignerPack() {
+  // extract master repo zip
+	const extractZip = new AdmZip(tmpDownloadZip);
+  extractZip.extractAllTo(os.tmpdir(), true);
+
+  const srcSvgs = path.join(os.tmpdir(), `ionicons-master`, `src`, `svg`);
+  console.log('designerpack source:', srcSvgs);
+
+  const designerPackArchive = archiver('zip', {
+    zlib: { level: 9 }
+  });
+
+  const output = fs.createWriteStream(distDesignerPackFile);
+  output.on('close', () => {
+    const svgCount = fs.readdirSync(srcSvgs).length;  
+    console.log(`designerpack created: ${distDesignerPackFile}, files: ${svgCount}`);
+  });
+
+  designerPackArchive.pipe(output);
+  designerPackArchive.directory(srcSvgs, false);
+  designerPackArchive.on('error', (err) => {
+    throw err;
+  });
+  designerPackArchive.finalize();
+}
