@@ -8,6 +8,7 @@ announcement-bar {
   }
 }
 .announcement-bar--ioniconf {
+  min-height: 74px;
   background: #000 var(--asset-path);
   background-size: 1800px;
   background-position: center;
