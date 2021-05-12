@@ -17,7 +17,7 @@ export const config: Config = {
         },
         { src: "../node_modules/ionicons/dist/ionicons/", dest: "./ionicons/" },
         {
-          src: "../node_modules/ionicons/dist/ionicons.js",
+          src: "../node_modules/ionicons/dist/ionicons/ionicons.esm.js",
           dest: "./ionicons.js",
         },
         {

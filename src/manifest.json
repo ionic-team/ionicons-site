@@ -4,7 +4,7 @@
   "start_url": "/",
   "display": "standalone",
   "icons": [{
-    "src": "/assets/img/icon.png",
+    "src": "/ionicons/assets/img/icon.png",
     "sizes": "1024x1024",
     "type": "image/png"
   }],
