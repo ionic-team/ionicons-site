@@ -13,7 +13,7 @@ export const config: Config = {
       copy: [
         {
           src: "../node_modules/@ionic-internal/ionic-ds/www/assets/fonts",
-          dest: "./fonts",
+          dest: "../fonts",
         },
         { src: "../node_modules/ionicons/dist/ionicons/", dest: "./ionicons/" },
         {
