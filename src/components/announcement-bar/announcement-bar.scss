@@ -3,13 +3,12 @@ announcement-bar {
   margin-inline-start: auto;
   margin-inline-end: auto;
 
-  min-height: 74px;
-
   @media (max-width: 48em) {
     display: none;
   }
-}
-.announcement-bar--ioniconf {
+
+  //#region ------------ IONICONF -----------
+  min-height: 74px;
   background: #000 var(--asset-path);
   background-size: 1800px;
   background-position: center;
@@ -63,4 +62,5 @@ announcement-bar {
       linear-gradient(85.46deg, #4cc3ff 0%, #4172ff 100%), #51dddd;
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
   }
+  //#endregion
 }
