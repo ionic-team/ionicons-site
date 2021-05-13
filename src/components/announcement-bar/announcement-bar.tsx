@@ -13,7 +13,7 @@ export class AnnouncementBar {
 
   @State() data: any;
 
-  constructor() {
+  componentWillLoad() {
     Build.isBrowser && this.getLatest();
   }
 
