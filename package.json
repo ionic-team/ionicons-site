@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "build": "npm run build.sprite && stencil build --prerender && npm run build.zip",
+    "postbuild": "cp -R ./archived/* ./www/ionicons",
     "build.sprite": "node scripts/build-sprite.js",
     "build.zip": "node scripts/build-zip.js",
     "start": "npm run build.sprite && stencil build --dev --watch --serve",
