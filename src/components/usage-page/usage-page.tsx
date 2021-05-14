@@ -1,5 +1,4 @@
 import { Component, Prop, State, h } from '@stencil/core';
-import { QueueApi } from '@stencil/core/dist/declarations';
 import { MatchResults } from '@stencil/router';
 import content from './content';
 
@@ -9,7 +8,7 @@ import content from './content';
   styleUrl: 'usage-page.scss'
 })
 export class UsagePage {
-  @Prop({ context: 'queue' }) queue!: QueueApi;
+  @Prop({ context: 'queue' }) queue: any;
 
   @State() exampleType = 'md';
   @State() exampleIcon = 'heart';

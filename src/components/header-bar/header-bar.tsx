@@ -71,7 +71,7 @@ export class HeaderBar {
 
         <div class="container">
           <div class="logo">
-            <stencil-route-link url="/" exact={true}>
+            <stencil-route-link url="/ionicons/v4" exact={true}>
               <svg width="32px" height="32px" viewBox="0 0 32 32">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g id="icon" fill-rule="nonzero">
@@ -93,15 +93,14 @@ export class HeaderBar {
           <nav>
             <stencil-route-link
               class="nav__item"
-              url="/"
-              exact={true}
+              url="/ionicons/v4"
               onClick={this.hideNav.bind(this)}>
               Icons
             </stencil-route-link>
 
             <stencil-route-link
               class="nav__item"
-              url="/usage"
+              url="/ionicons/v4/usage"
               onClick={() => {
                 this.toggleHeaderSearch.emit('hide');
                 this.hideNav();
@@ -121,7 +120,7 @@ export class HeaderBar {
             <span class="close" onClick={this.hideNav.bind(this)}><i class="ion ion-md-close"></i></span>
           </nav>
 
-          <a class="btn sm-hide" href="/ionicons.designerpack.zip" download>
+          <a class="btn sm-hide" href="/ionicons/v4/ionicons.designerpack.zip" download>
             <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <g>
                   <rect id="bg" fill="#BAC3D1" x="0" y="9" width="9" height="2" rx="1"></rect>

@@ -7,7 +7,7 @@ import { Component, Event, EventEmitter, Listen, Prop, State, Watch, h } from '@
 export class IconSearch {
   @Prop() query = '';
   @Prop() size = 'small';
-  @Prop() autofocus = 'none';
+  @Prop() automaticfocus: string = 'none';
 
   @State() showClearCtrl = false;
 
@@ -45,7 +45,7 @@ export class IconSearch {
         <input type="text"
           placeholder="Search icons..."
           value={this.query}
-          autofocus={this.autofocus === 'autofocus' ? 'autofocus' : ''}/>
+          autofocus={this.automaticfocus === 'autofocus' ? 'autofocus' : ''}/>
 
         <i class={{
             'search-input__clear': true,

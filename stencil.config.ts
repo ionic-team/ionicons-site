@@ -9,9 +9,8 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      dir: 'docs',
       serviceWorker: null,
-      baseUrl: 'https://ionicons.com/',
+      baseUrl: 'https://ionic.io/ionicons/v4/',
       prerenderConfig: 'prerender.config.js',
       copy: [
         { src: '../node_modules/ionicons/dist/css/ionicons.min.css', dest: './css/ionicons.min.css' },
@@ -21,8 +20,8 @@ export const config: Config = {
         { src: '../node_modules/ionicons/dist/ionicons/data.json', dest: './data.json' },
         { src: '../node_modules/ionicons/dist/fonts/', dest: './fonts/' },
 
-        { src: '../archived/v1/', dest: './v1/' },
-        { src: '../archived/v2/', dest: './v2/' },
+        { src: '../archived/v1/', dest: '../v1/' },
+        { src: '../archived/v2/', dest: '../v2/' },
         { src: './index.html', dest: './usage/index.html' },
         { src: './test', dest: './test' },
       ]

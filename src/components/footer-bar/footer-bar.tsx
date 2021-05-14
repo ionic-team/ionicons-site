@@ -14,7 +14,7 @@ export class FooterBar {
               title="IonicFramework.com"
               rel="noopener">
               <img
-                src="/assets/img/ionic-os-logo.png"
+                src="/ionicons/v4/assets/img/ionic-os-logo.png"
                 alt="Ionic Open Source Logo" />
             </a>
             <p>
@@ -24,9 +24,10 @@ export class FooterBar {
 
           <div class="footer-menu">
             <a href="cheatsheet.html">Cheatsheet</a>
-            <a href="/v1">v1</a>
-            <a href="/v2">v2</a>
+            <a href="/ionicons/v1">v1</a>
+            <a href="/ionicons/v2">v2</a>
             <a href="https://ionicframework.com/docs/ionicons/">v3</a>
+            <a href="/ionicons">Current</a>
             <a href="https://ionicframework.com/">Ionic Framework</a>
           </div>
         </div>
