@@ -111,7 +111,7 @@ export class IoniconsSite {
     return (
       <site-root>
         <platform-bar productName="Ionicons"></platform-bar>
-        <announcement-bar></announcement-bar>
+        {/* <announcement-bar></announcement-bar> */}
         <header-bar
           version={this.data.version}
           query={this.query}
