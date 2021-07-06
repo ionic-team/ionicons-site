@@ -18,6 +18,7 @@ export class UsagePage {
   @Prop() data: any;
 
   componentWillLoad() {
+    this.setMeta();
     if (!window.location.hash) return;
 
     let iconNames: string[] = [];
@@ -50,6 +51,11 @@ export class UsagePage {
         window.scrollTo({ left: 0, top: offset, behavior: "smooth" });
       }, 50);
     }
+  }
+
+  setMeta() {
+    document.title =
+      "Ionicons Usage Guide: Tips for installing and using the Ionicons free icon library";
   }
 
   render() {
