@@ -139,7 +139,7 @@ export default function (version: string, name = "heart", suffix = "") {
           5.0 release notes
         </a>{" "}
         for a list of icon deletions/renames. You can find an archived version
-        of the v4 site <a href="/v4/">here</a>.
+        of the v4 site <a href="/ionicons/v4">here</a>.
       </p>
     </div>
   );
