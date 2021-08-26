@@ -72,6 +72,34 @@ export class ToastBar {
     }
   }
 
+  downloadBlob(blob, name = 'file.txt') {
+    // Convert your blob into a Blob URL (a special url that points to an object in the browser's memory)
+    const blobUrl = URL.createObjectURL(blob);
+  
+    // Create a link element
+    const link = document.createElement("a");
+  
+    // Set link's href to point to the Blob URL
+    link.href = blobUrl;
+    link.download = name;
+  
+    // Append link to the body
+    document.body.appendChild(link);
+  
+    // Dispatch click event on the link
+    // This is necessary as link.click() does not work on the latest firefox
+    link.dispatchEvent(
+      new MouseEvent('click', { 
+        bubbles: true, 
+        cancelable: true, 
+        view: window 
+      })
+    );
+  
+    // Remove link from body
+    document.body.removeChild(link);
+  }
+
   handleSVGDownload(ev: UIEvent, name) {
     ev.preventDefault();
     this.isSVGDownloading = true;
@@ -86,15 +114,7 @@ export class ToastBar {
       .then((svg) => {
         this.isSVGDownloading = false;
         const blob = new Blob([svg], {type: 'image/svg+xml'});
-        const url = URL.createObjectURL(blob);
-        // const encodedFile = `data:image/svg+xml,${this.encodeSVG(svg)}`;
-        const el = document.createElement('a');
-        el.setAttribute('href', url);
-        el.setAttribute('download', `${name}.svg`);
-        el.style.display = 'none';
-        document.body.appendChild(el);
-        el.click();
-        document.body.removeChild(el);
+        this.downloadBlob(blob, name + '.svg')
       });
   }
 
