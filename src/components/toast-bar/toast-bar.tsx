@@ -85,9 +85,11 @@ export class ToastBar {
       })
       .then((svg) => {
         this.isSVGDownloading = false;
-        const encodedFile = `data:image/svg+xml,${this.encodeSVG(svg)}`;
+        const blob = new Blob([svg], {type: 'image/svg+xml'});
+        const url = URL.createObjectURL(blob);
+        // const encodedFile = `data:image/svg+xml,${this.encodeSVG(svg)}`;
         const el = document.createElement('a');
-        el.setAttribute('href', encodedFile);
+        el.setAttribute('href', url);
         el.setAttribute('download', `${name}.svg`);
         el.style.display = 'none';
         document.body.appendChild(el);
