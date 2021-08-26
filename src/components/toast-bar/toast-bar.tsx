@@ -1,5 +1,6 @@
 import { Component, Element, Event, EventEmitter, Prop, State, h } from '@stencil/core';
 import { ResponsiveContainer } from '@ionic-internal/ionic-ds';
+import { saveAs } from 'file-saver';
 
 @Component({
   tag: 'toast-bar',
@@ -72,34 +73,6 @@ export class ToastBar {
     }
   }
 
-  downloadBlob(blob, name = 'file.txt') {
-    // Convert your blob into a Blob URL (a special url that points to an object in the browser's memory)
-    const blobUrl = URL.createObjectURL(blob);
-  
-    // Create a link element
-    const link = document.createElement("a");
-  
-    // Set link's href to point to the Blob URL
-    link.href = blobUrl;
-    link.download = name;
-  
-    // Append link to the body
-    document.body.appendChild(link);
-  
-    // Dispatch click event on the link
-    // This is necessary as link.click() does not work on the latest firefox
-    link.dispatchEvent(
-      new MouseEvent('click', { 
-        bubbles: true, 
-        cancelable: true, 
-        view: window 
-      })
-    );
-  
-    // Remove link from body
-    document.body.removeChild(link);
-  }
-
   handleSVGDownload(ev: UIEvent, name) {
     ev.preventDefault();
     this.isSVGDownloading = true;
@@ -114,7 +87,7 @@ export class ToastBar {
       .then((svg) => {
         this.isSVGDownloading = false;
         const blob = new Blob([svg], {type: 'image/svg+xml'});
-        this.downloadBlob(blob, name + '.svg')
+        saveAs(blob, name + '.svg');
       });
   }
 

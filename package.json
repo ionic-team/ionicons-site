@@ -38,5 +38,8 @@
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.7.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "file-saver": "^2.0.5"
+  }
 }
