@@ -33,7 +33,7 @@ webOptimizeArchive.on('error', (err) => {
 });
 webOptimizeArchive.finalize();
 
-const masterZipUrl = 'https://codeload.github.com/ionic-team/ionicons/zip/refs/heads/master';
+const masterZipUrl = 'https://codeload.github.com/ionic-team/ionicons/zip/refs/heads/main';
 const tmpDownloadZip = path.join(os.tmpdir(), `ionicons.zip`);
 
 console.log(`download ${masterZipUrl} to ${path.dirname(tmpDownloadZip)}`);
