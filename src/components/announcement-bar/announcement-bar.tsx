@@ -41,7 +41,7 @@ export class AnnouncementBar {
                 <div innerHTML={PrismicDOM.RichText.asHtml(this.data.text)} />
                 <a href={this.data.link.url} target="_blank" class="button">
                   {this.data.button_text}{" "}
-                  <span style={{ letterSpacing: "0" }}>-&gt;</span>
+                  {/* <span style={{ letterSpacing: "0" }}>-&gt;</span> */}
                 </a>
               </ResponsiveContainer>
             )}
