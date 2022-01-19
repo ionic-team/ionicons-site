@@ -47,7 +47,7 @@ function zipDesignerPack() {
 	const extractZip = new AdmZip(tmpDownloadZip);
   extractZip.extractAllTo(os.tmpdir(), true);
 
-  const srcSvgs = path.join(os.tmpdir(), `ionicons-master`, `src`, `svg`);
+  const srcSvgs = path.join(os.tmpdir(), `ionicons-main`, `src`, `svg`);
   console.log('designerpack source:', srcSvgs);
 
   const designerPackArchive = archiver('zip', {
