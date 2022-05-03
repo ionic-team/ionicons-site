@@ -38,11 +38,19 @@ export class AnnouncementBar {
           <nav>
             {this.data && (
               <ResponsiveContainer>
+                {this.data.left_image.url && (
+                  <img
+                    src={this.data.left_image.url}
+                    width={this.data.left_image.dimensions.width / 2}
+                    height={this.data.left_image.dimensions.height / 2}
+                    alt={this.data.left_image.alt}
+                  />
+                )}
                 <div innerHTML={PrismicDOM.RichText.asHtml(this.data.text)} />
-                <a href={this.data.link.url} target="_blank" class="button">
+                <button>
                   {this.data.button_text}{" "}
                   {/* <span style={{ letterSpacing: "0" }}>-&gt;</span> */}
-                </a>
+                </button>
               </ResponsiveContainer>
             )}
           </nav>
