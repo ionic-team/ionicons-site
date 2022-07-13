@@ -39,8 +39,8 @@ export default function (version: string, name = "heart", suffix = "") {
       </p>
 
       {highlight(
-        `<script type="module" src="https://unpkg.com/ionicons@${version}/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@${version}/dist/ionicons/ionicons.js"></script>`
+        `<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@${version}/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@${version}/dist/ionicons/ionicons.js"></script>`
       )}
 
       <h3 id="basic-usage">Basic usage</h3>

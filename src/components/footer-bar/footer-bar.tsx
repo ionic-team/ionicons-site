@@ -9,7 +9,7 @@ export class FooterBar {
   @Prop() version: string;
 
   render() {
-    const cheatsheetUrl = `https://unpkg.com/ionicons@${this.version}/dist/cheatsheet.html`;
+    const cheatsheetUrl = `https://cdn.jsdelivr.net/npm/ionicons@${this.version}/dist/cheatsheet.html`;
     return (
       <footer>
         <ResponsiveContainer>

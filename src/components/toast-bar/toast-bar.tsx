@@ -152,7 +152,7 @@ export class ToastBar {
                       </svg>
                     </div>
 
-                    <a class="btn btn--gray btn--small download-link" href={`https://unpkg.com/ionicons@${this.version}/dist/svg/${iconAttrName}.svg`} onClick={(ev) => this.handleSVGDownload(ev, iconAttrName)}>
+                    <a class="btn btn--gray btn--small download-link" href={`https://cdn.jsdelivr.net/npm/ionicons@${this.version}/dist/svg/${iconAttrName}.svg`} onClick={(ev) => this.handleSVGDownload(ev, iconAttrName)}>
                       { this.isSVGDownloading
                         ? <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="loading-animation">
                             <path d="M11 7C11 4.79086 9.20914 3 7 3C4.79086 3 3 4.79086 3 7C3 9.20914 4.79086 11 7 11" stroke="url(#paint0_angular)"/>
