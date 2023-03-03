@@ -12,7 +12,7 @@ export class NotFoundPage {
       <main>
         <ResponsiveContainer>
           <h1>Oops! We can't find the page you're looking for.</h1>
-          <p>Head back to the <stencil-route-link url="/ionicons" exact={true} class="block">Icons</stencil-route-link>.</p>
+          <p>Take me back to the <stencil-route-link url="/ionicons" exact={true} class="block">Icons</stencil-route-link>.</p>
         </ResponsiveContainer>
 
         <footer-bar></footer-bar>
