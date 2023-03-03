@@ -116,14 +116,14 @@ export default function (version: string, name = "heart", suffix = "") {
 }`
       )}
 
-      <h2>Stroke weight</h2>
+      <h2>Stroke width</h2>
       <p>
         When using an <code>outline</code> icon variant it is possible to adjust
-        the stroke weight, for improved visual balance relative to the icon's
-        size or relative to the weight of adjacent text. You can set a specific
-        size by applying the <code>--ionicon-stroke-weight</code> CSS custom
+        the stroke width, for improved visual balance relative to the icon's
+        size or relative to the width of adjacent text. You can set a specific
+        size by applying the <code>--ionicon-stroke-width</code> CSS custom
         property to the <code>ion-icon</code> component. The default value is{" "}
-        <code>32px</code>
+        <code>32px</code>.
       </p>
       {highlight(`<ion-icon name="${advancedUsageName}-outline"></ion-icon>`)}
       {highlight(
