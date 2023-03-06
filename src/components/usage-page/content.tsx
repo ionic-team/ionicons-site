@@ -132,6 +132,30 @@ export default function (version: string, name = "heart", suffix = "") {
 }`
       )}
 
+      <h2>Accessibility</h2>
+      <p>
+        Icons that are purely decorative content should have <code>aria-hidden="true"</code>.
+        This will not visually hide the icon, but it will hide the element from assistive technology.
+      </p>
+      {highlight(`<ion-icon name="heart" aria-hidden="true"></ion-icon>`)}
+
+      <p>
+        If the icon is interactive, it should have alternate text defined by adding an
+        <code>aria-label</code>.
+      </p>
+      {highlight(`<ion-icon name="heart" aria-label="Favorite"></ion-icon>`)}
+
+      <p>
+        Alternatively, if the icon is inside of another element that it is describing, that element
+        should have the <code>aria-label</code> added to it, and the icon should be hidden using
+        <code>aria-hidden</code>.
+      </p>
+      {highlight(
+        `<ion-button aria-label="Favorite">
+  <ion-icon name="heart" aria-hidden="true"></ion-icon>
+</ion-button>`
+      )}
+
       <h2>Migrating from v4</h2>
       <p>
         See the{" "}
