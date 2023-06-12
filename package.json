@@ -24,7 +24,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@ionic-internal/ionic-ds": "4.1.4",
+    "@ionic-internal/ionic-ds": "4.1.5",
     "@stencil/core": "2.5.2",
     "@stencil/router": "1.0.1",
     "@stencil/sass": "1.4.1",
