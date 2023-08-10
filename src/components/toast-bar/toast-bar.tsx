@@ -137,8 +137,8 @@ export class ToastBar {
                     </stencil-route-link>
                   </div>
 
-                  <code>
-                    <span class="hover-highlight" onClick={() => this.handleCodeClick(iconAttrName)}>
+                  <code onClick={() => this.handleCodeClick(iconAttrName)}>
+                    <span class="hover-highlight">
                       {'<'}<span class="yellow">ion-icon</span>&nbsp;<span class="orange">name</span>{'='}<span class="green">{`"${iconAttrName}"`}</span>{'>'}{'</'}<span class="yellow">ion-icon</span>{'>'}
                     </span>
                   </code>
