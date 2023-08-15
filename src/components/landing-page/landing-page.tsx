@@ -23,7 +23,6 @@ export class LandingPage {
           </ResponsiveContainer>
           <icon-list query={this.query} data={this.data}></icon-list>
         </div>
-
         <footer-bar version={this.data.version}></footer-bar>
       </main>
     );
