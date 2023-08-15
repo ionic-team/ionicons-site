@@ -11,7 +11,9 @@ announcement-bar {
 }
 
 announcement-bar {
-  background: #001934 var(--asset-path);
+  position: relative;
+
+  background-color: var(--c-carbon-100);
   background-size: 1800px;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,45 +22,73 @@ announcement-bar {
   text-align: center;
 }
 
+announcement-bar .bg {
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 announcement-bar .ui-container {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
 
   min-height: 4.5rem;
 }
 
 announcement-bar p {
+  margin: 0;
+
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.4rem;
-
-  margin-inline-start: 2rem;
-  margin-inline-end: 2rem;
 
   color: #fff;
 }
 
 announcement-bar button {
-  border: none;
+  cursor: pointer;
+  
+  position: relative;
+  z-index: 1;
 
-  background-color: #8bfbff;
-  border-radius: 0;
+  display: flex;
+  align-items: center;
 
-  font-weight: 700;
-  font-size: 0.75rem;
-  line-height: 0.9rem;
-  color: #001a3a;
+  border: 1px solid #a2fcff;
 
-  padding: 7.5px 12px 9.5px;
+  font-family: monospace;
+  font-size: .875rem;
+  line-height: 0.813rem;
 
-  min-height: 32px;
+  padding: 0 1rem;
 
-  white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.08rem;
+  height: 2.375rem;
 
-  transition: background-color 0.2s ease-out;
+  letter-spacing: 0.09em;
+
+  transition: opacity 0.2s ease-out;
+
+  background: linear-gradient(215.33deg, #176bff -88.72%, #17f1ff 111.77%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
 }
 announcement-bar button:hover {
   background-color: #bbfcff;
