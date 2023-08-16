@@ -110,8 +110,8 @@ export class IoniconsSite {
   render() {
     return (
       <site-root>
-        {/* <platform-bar productName="Ionicons"></platform-bar> */}
-        <announcement-bar></announcement-bar>
+        <platform-bar productName="Ionicons"></platform-bar>
+        {/* <announcement-bar></announcement-bar> */}
         <header-bar
           version={this.data.version}
           query={this.query}
