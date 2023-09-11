@@ -156,6 +156,49 @@ export default function (version: string, name = "heart", suffix = "") {
 </ion-button>`
       )}
 
+      <h2>Browser support</h2>
+      <p>Ionicons are supported on the browsers listed below:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Browser</th>
+            <th>Version</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Chrome</strong>
+            </td>
+            <td>79+</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Safari</strong>
+            </td>
+            <td>14+</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Edge</strong>
+            </td>
+            <td>79+</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Firefox</strong>
+            </td>
+            <td>70+</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>IE 11</strong>
+            </td>
+            <td>Not supported</td>
+          </tr>
+        </tbody>
+      </table>
+
       <h2>Migrating from v4</h2>
       <p>
         See the{" "}
