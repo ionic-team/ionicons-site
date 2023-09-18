@@ -159,6 +159,7 @@ export default function (version: string, name = "heart", suffix = "") {
       <h2>Browser support</h2>
       <p>Ionicons are supported on the browsers listed below:</p>
       <table>
+        <caption>Supported browsers</caption>
         <thead>
           <tr>
             <th>Browser</th>
