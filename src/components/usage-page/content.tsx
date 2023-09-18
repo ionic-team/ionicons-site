@@ -157,6 +157,7 @@ export default function (version: string, name = "heart", suffix = "") {
       )}
 
       <h2>Browser support</h2>
+      <p>Report problems with this compatibility data on <a href="https://github.com/ionic-team/ionicons/issues" target="_blank">GitHub</a>.</p>
       <table>
         <caption>Supported browsers</caption>
         <thead>
@@ -198,7 +199,6 @@ export default function (version: string, name = "heart", suffix = "") {
           </tr>
         </tbody>
       </table>
-      <p>Report problems with this compatibility data on <a href="https://github.com/ionic-team/ionicons/issues" target="_blank">GitHub</a></p>
 
       <h2>Migrating from v4</h2>
       <p>
