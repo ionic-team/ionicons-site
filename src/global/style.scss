@@ -1,4 +1,10 @@
-@import 'node_modules/@ionic-internal/ionic-ds/dist/scss/fonts';
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-weight: 1 1000;
+  src: url("https://code.ionicframework.com/assets/fonts/inter/Inter-variable-ASCII-subset.woff2")
+    format("woff2-variations");
+}
 
 :root {
   --color-mirage: #171c24;
