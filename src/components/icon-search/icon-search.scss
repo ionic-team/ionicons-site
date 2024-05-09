@@ -6,7 +6,6 @@ icon-search {
   .search-input input {
     width: 100%;
     font-weight: 400;
-    font-family: 'Eina';
     font-size: 16px;
     border: 0;
     outline: 0;
@@ -75,7 +74,6 @@ icon-search {
     left: 16px;
   }
 
-
   .search-input--small .search-input__icon svg {
     width: 16px;
     height: 16px;
@@ -93,7 +91,6 @@ icon-search {
     text-indent: 0;
   }
 
-
   .search-input--large input {
     transition: box-shadow 0.3s;
     font-size: 16px;
@@ -102,11 +99,13 @@ icon-search {
     padding-left: 50px;
     padding-right: 50px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   }
 
   .search-input--large input:focus {
-    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   }
 
   .search-input--large:before {
