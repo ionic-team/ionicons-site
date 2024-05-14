@@ -42,8 +42,12 @@ announcement-bar p {
 
   color: #fff;
 
+  letter-spacing: 0.01em;
+
   strong {
     color: var(--c-red-70);
+
+    font-weight: 500;
 
     transition: color 0.2s ease-out;
   }
