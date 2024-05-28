@@ -35,7 +35,7 @@ export class AnnouncementBar {
         // }}
       >
         <a
-          href="https://outsystems.com"
+          href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none"
           target="_blank"
           rel="noopener"
           class="wrapper"
