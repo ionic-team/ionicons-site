@@ -18,7 +18,15 @@ announcement-bar {
 
 announcement-bar {
   // background: #001934 var(--asset-path);
-  background: var(--c-carbon-100);
+  background: linear-gradient(
+    90deg,
+    #440f14,
+    #5e1219 15%,
+    #03060b 35%,
+    #03060b 45%,
+    #5e1219 85%,
+    #440f14
+  );
   background-size: 1800px;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,17 +40,19 @@ announcement-bar .ui-container {
   align-items: center;
   justify-content: center;
 
-  height: 2.75rem;
+  height: 3.5rem;
 }
 
 announcement-bar p {
   margin: 0;
 
+  font-size: 1rem;
+
   font-weight: 500;
 
-  color: #fff;
+  letter-spacing: -0.02em;
 
-  letter-spacing: 0.01em;
+  color: #fff;
 
   strong {
     color: var(--c-red-70);
