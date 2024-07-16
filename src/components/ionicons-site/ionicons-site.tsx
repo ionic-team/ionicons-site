@@ -1,4 +1,4 @@
-import { Component, Listen, State, h } from "@stencil/core";
+import { Component, Listen, State, h, Build } from "@stencil/core";
 import "@stencil/router";
 
 interface IconData {
@@ -44,6 +44,8 @@ export class IoniconsSite {
   }
 
   async loadData() {
+    if (Build.isServer) return;
+
     const res = await fetch("/ionicons/ionicons.json");
     const json = await res.json();
 
